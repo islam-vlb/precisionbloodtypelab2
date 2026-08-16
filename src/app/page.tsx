@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ShoppingCart, Check, ArrowRight, Microscope, Beaker, Activity, Heart } from 'lucide-react'
 import { useCart } from '@/components/CartProvider'
 import { products } from '@/lib/supabase'
+import ImageWithFallback from '@/components/ImageWithFallback'
 
 const mainProduct = products[0]
 const supplement = products[1]
@@ -73,19 +74,24 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <div className="aspect-[4/5] bg-warm-dark border border-graphite/10 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <svg viewBox="0 0 120 120" className="h-32 w-32 mx-auto mb-6 text-copper" fill="none" stroke="currentColor" strokeWidth="1">
-                      <circle cx="60" cy="60" r="50" />
-                      <circle cx="60" cy="60" r="35" />
-                      <circle cx="60" cy="60" r="20" />
-                      <line x1="60" y1="10" x2="60" y2="110" />
-                      <line x1="10" y1="60" x2="110" y2="60" />
-                    </svg>
-                    <p className="text-sm text-graphite/50 font-medium tracking-wide uppercase">At-Home Metabolism Test Kit</p>
-                    <p className="text-xs text-graphite/40 mt-2">Product Image</p>
-                  </div>
-                </div>
+                <ImageWithFallback
+                  src="/images/hero-medical-lab.jpg"
+                  alt="Medical laboratory professional analyzing samples"
+                  className="w-full h-full object-cover"
+                  fallback={
+                    <div className="text-center">
+                      <svg viewBox="0 0 120 120" className="h-32 w-32 mx-auto mb-6 text-copper" fill="none" stroke="currentColor" strokeWidth="1">
+                        <circle cx="60" cy="60" r="50" />
+                        <circle cx="60" cy="60" r="35" />
+                        <circle cx="60" cy="60" r="20" />
+                        <line x1="60" y1="10" x2="60" y2="110" />
+                        <line x1="10" y1="60" x2="110" y2="60" />
+                      </svg>
+                      <p className="text-sm text-graphite/50 font-medium tracking-wide uppercase">At-Home Metabolism Test Kit</p>
+                      <p className="text-xs text-graphite/40 mt-2">Product Image</p>
+                    </div>
+                  }
+                />
                 <div className="absolute top-4 left-4 text-xs text-graphite/30 font-mono">FIG. 01</div>
                 <div className="absolute bottom-4 right-4 text-xs text-graphite/30 font-mono">METABOLIC SCREENING</div>
               </div>
@@ -118,15 +124,20 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
-              <div className="aspect-square bg-warm-dark border border-graphite/10 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <svg viewBox="0 0 120 120" className="h-32 w-32 text-copper/40" fill="none" stroke="currentColor" strokeWidth="0.5">
-                    <rect x="20" y="20" width="80" height="80" />
-                    <rect x="30" y="30" width="60" height="60" />
-                    <line x1="20" y1="20" x2="100" y2="100" />
-                    <line x1="100" y1="20" x2="20" y2="100" />
-                  </svg>
-                </div>
+              <div className="aspect-square bg-warm-dark border border-graphite/10 relative overflow-hidden">
+                <ImageWithFallback
+                  src="/images/product-test-kit.jpg"
+                  alt="At-Home Metabolism Test Kit"
+                  className="w-full h-full object-cover"
+                  fallback={
+                    <svg viewBox="0 0 120 120" className="h-32 w-32 text-copper/40" fill="none" stroke="currentColor" strokeWidth="0.5">
+                      <rect x="20" y="20" width="80" height="80" />
+                      <rect x="30" y="30" width="60" height="60" />
+                      <line x1="20" y1="20" x2="100" y2="100" />
+                      <line x1="100" y1="20" x2="20" y2="100" />
+                    </svg>
+                  }
+                />
                 <div className="absolute top-4 left-4 text-xs text-graphite/30 font-mono">PRODUCT</div>
                 <div className="absolute bottom-4 right-4 text-xs text-graphite/30 font-mono">FIG. 02</div>
               </div>
@@ -200,16 +211,21 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
-              <div className="aspect-[4/3] bg-warm-dark border border-graphite/10 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <svg viewBox="0 0 120 120" className="h-32 w-32 text-lab/30" fill="none" stroke="currentColor" strokeWidth="0.5">
-                    <circle cx="60" cy="60" r="50" />
-                    <circle cx="60" cy="60" r="35" />
-                    <circle cx="60" cy="60" r="20" />
-                    <line x1="60" y1="10" x2="60" y2="110" />
-                    <line x1="10" y1="60" x2="110" y2="60" />
-                  </svg>
-                </div>
+              <div className="aspect-[4/3] bg-warm-dark border border-graphite/10 relative overflow-hidden">
+                <ImageWithFallback
+                  src="/images/educational-lab.jpg"
+                  alt="Laboratory research and education"
+                  className="w-full h-full object-cover"
+                  fallback={
+                    <svg viewBox="0 0 120 120" className="h-32 w-32 text-lab/30" fill="none" stroke="currentColor" strokeWidth="0.5">
+                      <circle cx="60" cy="60" r="50" />
+                      <circle cx="60" cy="60" r="35" />
+                      <circle cx="60" cy="60" r="20" />
+                      <line x1="60" y1="10" x2="60" y2="110" />
+                      <line x1="10" y1="60" x2="110" y2="60" />
+                    </svg>
+                  }
+                />
                 <div className="absolute top-4 left-4 text-xs text-graphite/30 font-mono">FIG. 03</div>
                 <div className="absolute bottom-4 right-4 text-xs text-graphite/30 font-mono">EDUCATIONAL</div>
               </div>
@@ -266,15 +282,20 @@ export default function HomePage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-warm-dark border border-graphite/10 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <svg viewBox="0 0 120 120" className="h-32 w-32 text-lab/30" fill="none" stroke="currentColor" strokeWidth="0.5">
-                    <rect x="20" y="20" width="80" height="80" />
-                    <rect x="30" y="30" width="60" height="60" />
-                    <line x1="20" y1="20" x2="100" y2="100" />
-                    <line x1="100" y1="20" x2="20" y2="100" />
-                  </svg>
-                </div>
+              <div className="aspect-square bg-warm-dark border border-graphite/10 relative overflow-hidden">
+                <ImageWithFallback
+                  src="/images/wellness-supplement.jpg"
+                  alt="Daily Energy & Vitality Support"
+                  className="w-full h-full object-cover"
+                  fallback={
+                    <svg viewBox="0 0 120 120" className="h-32 w-32 text-lab/30" fill="none" stroke="currentColor" strokeWidth="0.5">
+                      <rect x="20" y="20" width="80" height="80" />
+                      <rect x="30" y="30" width="60" height="60" />
+                      <line x1="20" y1="20" x2="100" y2="100" />
+                      <line x1="100" y1="20" x2="20" y2="100" />
+                    </svg>
+                  }
+                />
                 <div className="absolute top-4 left-4 text-xs text-graphite/30 font-mono">WELLNESS</div>
                 <div className="absolute bottom-4 right-4 text-xs text-graphite/30 font-mono">FIG. 04</div>
               </div>

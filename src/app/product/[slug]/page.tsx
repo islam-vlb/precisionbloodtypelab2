@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { products } from '@/lib/supabase'
 import { Check, ShoppingCart, ArrowRight, Minus } from 'lucide-react'
 import AddToCartButton from '@/components/AddToCartButton'
+import ImageWithFallback from '@/components/ImageWithFallback'
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }))
@@ -30,15 +31,20 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
         {!isSupplement ? (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div className="aspect-square bg-warm-dark border border-graphite/10 relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <svg viewBox="0 0 120 120" className="h-32 w-32 text-copper/40" fill="none" stroke="currentColor" strokeWidth="0.5">
-                  <rect x="20" y="20" width="80" height="80" />
-                  <rect x="30" y="30" width="60" height="60" />
-                  <line x1="20" y1="20" x2="100" y2="100" />
-                  <line x1="100" y1="20" x2="20" y2="100" />
-                </svg>
-              </div>
+            <div className="aspect-square bg-warm-dark border border-graphite/10 relative overflow-hidden">
+              <ImageWithFallback
+                src={product.image}
+                alt={product.name}
+                className="w-full h-full object-cover"
+                fallback={
+                  <svg viewBox="0 0 120 120" className="h-32 w-32 text-copper/40" fill="none" stroke="currentColor" strokeWidth="0.5">
+                    <rect x="20" y="20" width="80" height="80" />
+                    <rect x="30" y="30" width="60" height="60" />
+                    <line x1="20" y1="20" x2="100" y2="100" />
+                    <line x1="100" y1="20" x2="20" y2="100" />
+                  </svg>
+                }
+              />
               <div className="absolute top-4 left-4 text-xs text-graphite/30 font-mono">PRODUCT</div>
               <div className="absolute bottom-4 right-4 text-xs text-graphite/30 font-mono">FIG. 01</div>
             </div>
@@ -183,13 +189,20 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
             <div className="lg:col-span-1">
               <div className="sticky top-24 bg-white border border-graphite/10 p-8">
-                <div className="aspect-square bg-warm-dark border border-graphite/10 flex items-center justify-center mb-6">
-                  <svg viewBox="0 0 120 120" className="h-24 w-24 text-lab/30" fill="none" stroke="currentColor" strokeWidth="0.5">
-                    <rect x="20" y="20" width="80" height="80" />
-                    <rect x="30" y="30" width="60" height="60" />
-                    <line x1="20" y1="20" x2="100" y2="100" />
-                    <line x1="100" y1="20" x2="20" y2="100" />
-                  </svg>
+                <div className="aspect-square bg-warm-dark border border-graphite/10 flex items-center justify-center mb-6 overflow-hidden">
+                  <ImageWithFallback
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                    fallback={
+                      <svg viewBox="0 0 120 120" className="h-24 w-24 text-lab/30" fill="none" stroke="currentColor" strokeWidth="0.5">
+                        <rect x="20" y="20" width="80" height="80" />
+                        <rect x="30" y="30" width="60" height="60" />
+                        <line x1="20" y1="20" x2="100" y2="100" />
+                        <line x1="100" y1="20" x2="20" y2="100" />
+                      </svg>
+                    }
+                  />
                 </div>
                 <p className="text-3xl font-bold text-copper mb-6">${product.price.toFixed(2)}</p>
                 <AddToCartButton product={product} />
