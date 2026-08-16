@@ -1,0 +1,50 @@
+export const products = [
+  {
+    id: 'at-home-metabolism-test-kit',
+    name: 'At-Home Metabolism Test Kit',
+    price: 54.95,
+    slug: 'at-home-metabolism-test-kit',
+    category: 'test-kit',
+    description: 'An at-home metabolism test kit that measures key hormones commonly associated with metabolism, energy, and weight — including cortisol — using a simple at-home sample collection. Results are provided for informational purposes and can be shared with a healthcare provider for further guidance.',
+    longDescription: 'Understand your metabolism from the comfort of home. The At-Home Metabolism Test Kit measures key hormones associated with metabolism, energy, and weight using a simple at-home sample collection. Results are provided for informational purposes and can be shared with a healthcare provider for further guidance.',
+    features: [
+      'Measures key hormones associated with metabolism and energy',
+      'Simple at-home sample collection with included instructions',
+      'Discreet packaging for shipping and storage',
+      'Results available quickly',
+      'Results may be shared with your physician for follow-up guidance',
+      'For informational and wellness purposes',
+    ],
+    image: '/images/at-home-metabolism-test-kit.jpg',
+    medicalDisclaimer: 'This product is intended for general wellness and informational purposes. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider regarding any health concerns or before making decisions based on your results.',
+  },
+  {
+    id: 'daily-energy-vitality-support',
+    name: 'Daily Energy & Vitality Support',
+    price: 34.95,
+    slug: 'daily-energy-vitality-support',
+    category: 'supplement',
+    description: 'A daily supplement formulated with B-vitamins, iodine, and adaptogenic herbs that may help support everyday energy levels and overall vitality as part of a healthy lifestyle. This product is not intended to diagnose, treat, cure, or prevent any disease.',
+    longDescription: 'Support your everyday energy levels and overall vitality with a daily supplement formulated with B-vitamins, iodine, and adaptogenic herbs that may help support everyday energy levels and overall vitality as part of a healthy lifestyle.',
+    features: [
+      'Contains vitamin B12 and B6, which may help support normal energy production',
+      'Iodine included to help support healthy thyroid function',
+      'L-theanine included, which may help support calm, focused energy',
+      'Ashwagandha and rhodiola, adaptogens traditionally used to help support the body\'s response to daily stress',
+      'One capsule serving per day',
+    ],
+    ingredients: [
+      { name: 'Vitamin B12 (as Methylcobalamin)', amount: '1000mcg' },
+      { name: 'Vitamin B6', amount: '10mg' },
+      { name: 'Iodine (as Potassium Iodide)', amount: '150mcg' },
+      { name: 'L-Theanine', amount: '100mg' },
+      { name: 'Ashwagandha Root Extract', amount: '300mg' },
+      { name: 'Rhodiola Rosea Extract', amount: '200mg' },
+    ],
+    image: '/images/daily-energy-vitality-support.jpg',
+    fdaDisclosure: 'These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Consult your physician before beginning any new supplement, especially if you have a thyroid condition, are pregnant or nursing, or are taking medication.',
+    supplementDisclaimer: 'This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Consult your physician before beginning any new supplement.',
+  },
+] as const
+
+export type Product = typeof products[number]
