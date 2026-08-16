@@ -73,17 +73,25 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <div className="aspect-[4/5] bg-warm-dark border border-graphite/10 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <svg viewBox="0 0 120 120" className="h-32 w-32 text-copper" fill="none" stroke="currentColor" strokeWidth="1">
-                    <circle cx="60" cy="60" r="50" />
-                    <circle cx="60" cy="60" r="35" />
-                    <circle cx="60" cy="60" r="20" />
-                    <line x1="60" y1="10" x2="60" y2="110" />
-                    <line x1="10" y1="60" x2="110" y2="60" />
-                  </svg>
-                </div>
+                <svg viewBox="0 0 400 500" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="400" height="500" fill="#1a1a1a"/>
+                  <rect x="40" y="40" width="320" height="420" rx="4" stroke="#c67b4e" strokeWidth="1" opacity="0.3"/>
+                  <rect x="60" y="60" width="280" height="380" rx="2" stroke="#c67b4e" strokeWidth="0.5" opacity="0.2"/>
+                  <circle cx="200" cy="180" r="70" stroke="#c67b4e" strokeWidth="1.5" opacity="0.6"/>
+                  <circle cx="200" cy="180" r="50" stroke="#c67b4e" strokeWidth="1" opacity="0.4"/>
+                  <circle cx="200" cy="180" r="30" stroke="#c67b4e" strokeWidth="0.5" opacity="0.3"/>
+                  <line x1="130" y1="180" x2="270" y2="180" stroke="#c67b4e" strokeWidth="0.5" opacity="0.3"/>
+                  <line x1="200" y1="110" x2="200" y2="250" stroke="#c67b4e" strokeWidth="0.5" opacity="0.3"/>
+                  <circle cx="200" cy="180" r="8" fill="#c67b4e" opacity="0.8"/>
+                  <rect x="170" y="260" width="60" height="120" rx="30" stroke="#c67b4e" strokeWidth="1.5" opacity="0.6"/>
+                  <rect x="180" y="280" width="40" height="80" rx="20" stroke="#c67b4e" strokeWidth="1" opacity="0.4"/>
+                  <rect x="190" y="300" width="20" height="40" rx="10" stroke="#c67b4e" strokeWidth="0.5" opacity="0.3"/>
+                  <line x1="200" y1="380" x2="200" y2="420" stroke="#c67b4e" strokeWidth="1" opacity="0.5"/>
+                  <circle cx="200" cy="430" r="6" fill="#c67b4e" opacity="0.6"/>
+                  <text x="200" y="470" textAnchor="middle" fill="#c67b4e" fontSize="10" fontFamily="monospace" opacity="0.6">METABOLIC SCREENING</text>
+                </svg>
                 <div className="absolute top-4 left-4 text-xs text-graphite/30 font-mono">FIG. 01</div>
-                <div className="absolute bottom-4 right-4 text-xs text-graphite/30 font-mono">METABOLIC SCREENING</div>
+                <div className="absolute bottom-4 right-4 text-xs text-graphite/30 font-mono">LABORATORY ANALYSIS</div>
               </div>
             </div>
           </div>
@@ -115,14 +123,20 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
               <div className="aspect-square bg-warm-dark border border-graphite/10 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <svg viewBox="0 0 120 120" className="h-32 w-32 text-copper/40" fill="none" stroke="currentColor" strokeWidth="0.5">
-                    <rect x="20" y="20" width="80" height="80" />
-                    <rect x="30" y="30" width="60" height="60" />
-                    <line x1="20" y1="20" x2="100" y2="100" />
-                    <line x1="100" y1="20" x2="20" y2="100" />
-                  </svg>
-                </div>
+                <svg viewBox="0 0 400 400" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="400" height="400" fill="#f0efeb"/>
+                  <rect x="80" y="60" width="240" height="280" rx="8" fill="#1a1a1a" stroke="#c67b4e" strokeWidth="2"/>
+                  <rect x="100" y="80" width="200" height="60" rx="4" fill="#c67b4e" opacity="0.2"/>
+                  <text x="200" y="118" textAnchor="middle" fill="#c67b4e" fontSize="14" fontFamily="sans-serif" fontWeight="bold">METABOLISM</text>
+                  <text x="200" y="135" textAnchor="middle" fill="#c67b4e" fontSize="10" fontFamily="sans-serif" opacity="0.8">TEST KIT</text>
+                  <rect x="120" y="160" width="160" height="100" rx="4" fill="#faf9f7" stroke="#c67b4e" strokeWidth="1" opacity="0.3"/>
+                  <circle cx="160" cy="200" r="20" stroke="#c67b4e" strokeWidth="1" opacity="0.5"/>
+                  <circle cx="200" cy="200" r="20" stroke="#c67b4e" strokeWidth="1" opacity="0.5"/>
+                  <circle cx="240" cy="200" r="20" stroke="#c67b4e" strokeWidth="1" opacity="0.5"/>
+                  <rect x="140" y="280" width="120" height="40" rx="4" fill="#c67b4e" opacity="0.3"/>
+                  <text x="200" y="305" textAnchor="middle" fill="#1a1a1a" fontSize="12" fontFamily="sans-serif" fontWeight="bold">$54.95</text>
+                  <text x="200" y="365" textAnchor="middle" fill="#c67b4e" fontSize="9" fontFamily="monospace" opacity="0.6">AT-HOME METABOLISM TEST KIT</text>
+                </svg>
                 <div className="absolute top-4 left-4 text-xs text-graphite/30 font-mono">PRODUCT</div>
                 <div className="absolute bottom-4 right-4 text-xs text-graphite/30 font-mono">FIG. 02</div>
               </div>
@@ -197,15 +211,21 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
               <div className="aspect-[4/3] bg-warm-dark border border-graphite/10 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <svg viewBox="0 0 120 120" className="h-32 w-32 text-lab/30" fill="none" stroke="currentColor" strokeWidth="0.5">
-                    <circle cx="60" cy="60" r="50" />
-                    <circle cx="60" cy="60" r="35" />
-                    <circle cx="60" cy="60" r="20" />
-                    <line x1="60" y1="10" x2="60" y2="110" />
-                    <line x1="10" y1="60" x2="110" y2="60" />
-                  </svg>
-                </div>
+                <svg viewBox="0 0 400 300" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="400" height="300" fill="#1a1a1a"/>
+                  <rect x="40" y="30" width="320" height="240" rx="4" stroke="#4a7c59" strokeWidth="1" opacity="0.4"/>
+                  <rect x="60" y="50" width="280" height="200" rx="2" stroke="#4a7c59" strokeWidth="0.5" opacity="0.3"/>
+                  <path d="M100 150 L200 80 L300 150 L200 220 Z" stroke="#4a7c59" strokeWidth="1.5" opacity="0.6" fill="none"/>
+                  <circle cx="200" cy="150" r="40" stroke="#4a7c59" strokeWidth="1" opacity="0.5"/>
+                  <circle cx="200" cy="150" r="25" stroke="#4a7c59" strokeWidth="0.5" opacity="0.4"/>
+                  <line x1="200" y1="110" x2="200" y2="190" stroke="#4a7c59" strokeWidth="0.5" opacity="0.4"/>
+                  <line x1="160" y1="150" x2="240" y2="150" stroke="#4a7c59" strokeWidth="0.5" opacity="0.4"/>
+                  <circle cx="200" cy="150" r="6" fill="#4a7c59" opacity="0.8"/>
+                  <line x1="140" y1="130" x2="260" y2="170" stroke="#4a7c59" strokeWidth="0.5" opacity="0.3"/>
+                  <line x1="140" y1="170" x2="260" y2="130" stroke="#4a7c59" strokeWidth="0.5" opacity="0.3"/>
+                  <rect x="80" y="230" width="240" height="30" rx="2" stroke="#4a7c59" strokeWidth="0.5" opacity="0.3"/>
+                  <text x="200" y="250" textAnchor="middle" fill="#4a7c59" fontSize="10" fontFamily="monospace" opacity="0.6">HORMONE ANALYSIS</text>
+                </svg>
                 <div className="absolute top-4 left-4 text-xs text-graphite/30 font-mono">FIG. 03</div>
                 <div className="absolute bottom-4 right-4 text-xs text-graphite/30 font-mono">EDUCATIONAL</div>
               </div>
@@ -263,14 +283,19 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <div className="aspect-square bg-warm-dark border border-graphite/10 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <svg viewBox="0 0 120 120" className="h-32 w-32 text-lab/30" fill="none" stroke="currentColor" strokeWidth="0.5">
-                    <rect x="20" y="20" width="80" height="80" />
-                    <rect x="30" y="30" width="60" height="60" />
-                    <line x1="20" y1="20" x2="100" y2="100" />
-                    <line x1="100" y1="20" x2="20" y2="100" />
-                  </svg>
-                </div>
+                <svg viewBox="0 0 400 400" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="400" height="400" fill="#f0efeb"/>
+                  <rect x="120" y="60" width="160" height="280" rx="12" fill="#1a1a1a" stroke="#4a7c59" strokeWidth="2"/>
+                  <rect x="140" y="40" width="120" height="40" rx="8" fill="#1a1a1a" stroke="#4a7c59" strokeWidth="1.5"/>
+                  <rect x="160" y="50" width="80" height="20" rx="4" fill="#4a7c59" opacity="0.3"/>
+                  <rect x="150" y="120" width="100" height="140" rx="6" fill="#faf9f7" stroke="#4a7c59" strokeWidth="1" opacity="0.4"/>
+                  <circle cx="200" cy="170" r="30" stroke="#4a7c59" strokeWidth="1.5" opacity="0.6"/>
+                  <circle cx="200" cy="170" r="20" stroke="#4a7c59" strokeWidth="1" opacity="0.4"/>
+                  <path d="M200 150 L200 190 M180 170 L220 170" stroke="#4a7c59" strokeWidth="1" opacity="0.5"/>
+                  <rect x="170" y="290" width="60" height="30" rx="4" fill="#4a7c59" opacity="0.2"/>
+                  <text x="200" y="310" textAnchor="middle" fill="#1a1a1a" fontSize="10" fontFamily="sans-serif" fontWeight="bold">60 CAPS</text>
+                  <text x="200" y="365" textAnchor="middle" fill="#4a7c59" fontSize="9" fontFamily="monospace" opacity="0.6">DAILY ENERGY & VITALITY</text>
+                </svg>
                 <div className="absolute top-4 left-4 text-xs text-graphite/30 font-mono">WELLNESS</div>
                 <div className="absolute bottom-4 right-4 text-xs text-graphite/30 font-mono">FIG. 04</div>
               </div>
