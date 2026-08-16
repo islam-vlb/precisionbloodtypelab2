@@ -73,23 +73,11 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <div className="aspect-[4/5] bg-warm-dark border border-graphite/10 relative overflow-hidden">
-                <svg viewBox="0 0 400 500" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="400" height="500" fill="#1a1a1a"/>
-                  <rect x="40" y="40" width="320" height="420" rx="4" stroke="#c67b4e" strokeWidth="1" opacity="0.3"/>
-                  <rect x="60" y="60" width="280" height="380" rx="2" stroke="#c67b4e" strokeWidth="0.5" opacity="0.2"/>
-                  <circle cx="200" cy="180" r="70" stroke="#c67b4e" strokeWidth="1.5" opacity="0.6"/>
-                  <circle cx="200" cy="180" r="50" stroke="#c67b4e" strokeWidth="1" opacity="0.4"/>
-                  <circle cx="200" cy="180" r="30" stroke="#c67b4e" strokeWidth="0.5" opacity="0.3"/>
-                  <line x1="130" y1="180" x2="270" y2="180" stroke="#c67b4e" strokeWidth="0.5" opacity="0.3"/>
-                  <line x1="200" y1="110" x2="200" y2="250" stroke="#c67b4e" strokeWidth="0.5" opacity="0.3"/>
-                  <circle cx="200" cy="180" r="8" fill="#c67b4e" opacity="0.8"/>
-                  <rect x="170" y="260" width="60" height="120" rx="30" stroke="#c67b4e" strokeWidth="1.5" opacity="0.6"/>
-                  <rect x="180" y="280" width="40" height="80" rx="20" stroke="#c67b4e" strokeWidth="1" opacity="0.4"/>
-                  <rect x="190" y="300" width="20" height="40" rx="10" stroke="#c67b4e" strokeWidth="0.5" opacity="0.3"/>
-                  <line x1="200" y1="380" x2="200" y2="420" stroke="#c67b4e" strokeWidth="1" opacity="0.5"/>
-                  <circle cx="200" cy="430" r="6" fill="#c67b4e" opacity="0.6"/>
-                  <text x="200" y="470" textAnchor="middle" fill="#c67b4e" fontSize="10" fontFamily="monospace" opacity="0.6">METABOLIC SCREENING</text>
-                </svg>
+                <img
+                  src="/images/hero-medical-lab.jpg"
+                  alt="Medical laboratory professional analyzing samples"
+                  className="w-full h-full object-cover"
+                />
                 <div className="absolute top-4 left-4 text-xs text-graphite/30 font-mono">FIG. 01</div>
                 <div className="absolute bottom-4 right-4 text-xs text-graphite/30 font-mono">LABORATORY ANALYSIS</div>
               </div>
