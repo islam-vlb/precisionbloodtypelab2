@@ -18,10 +18,10 @@ export default function AddToCartButton({ product }: { product: Product }) {
   return (
     <button
       onClick={handleClick}
-      className={`w-full rounded-lg px-6 py-4 font-heading font-semibold flex items-center justify-center gap-2 transition-colors ${
+      className={`w-full border px-6 py-4 font-heading font-semibold flex items-center justify-center gap-2 transition-colors ${
         added
-          ? 'bg-coral-dark text-white'
-          : 'bg-sage text-white hover:bg-sage-dark'
+          ? 'bg-copper text-white border-copper'
+          : 'bg-transparent text-graphite border-graphite/20 hover:border-copper hover:text-copper'
       }`}
     >
       <ShoppingCart className="h-5 w-5" />

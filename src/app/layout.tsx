@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-cream text-espresso antialiased">
+      <body className="bg-warm text-graphite antialiased">
         <CartProvider>
           <Header />
           <main>{children}</main>

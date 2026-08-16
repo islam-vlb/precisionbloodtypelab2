@@ -4,10 +4,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        sage: { DEFAULT: '#5B7B6C', light: '#6E8F7E', dark: '#4A6558' },
-        cream: { DEFAULT: '#F7F3EC', dark: '#EDE8DE' },
-        espresso: '#2B2420',
-        coral: { DEFAULT: '#D98C6E', light: '#E39E84', dark: '#C27858' },
+        graphite: { DEFAULT: '#1a1a1a', light: '#2d2d2d', muted: '#4a4a4a' },
+        warm: { DEFAULT: '#faf9f7', dark: '#f0efeb', muted: '#e8e6e1' },
+        copper: { DEFAULT: '#c67b4e', light: '#d4855c', dark: '#a8653d' },
+        lab: { DEFAULT: '#4a7c59', light: '#5a8a6a', dark: '#3d6649' },
+        ink: '#1f1f1f',
       },
       fontFamily: {
         heading: ['Sora', 'sans-serif'],
