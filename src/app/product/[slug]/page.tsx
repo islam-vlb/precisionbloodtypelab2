@@ -1,8 +1,9 @@
-import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { products } from '@/lib/supabase'
 import { Check, ShoppingCart, ArrowRight, Minus } from 'lucide-react'
 import AddToCartButton from '@/components/AddToCartButton'
+import ProductPurchaseBox from '@/components/ProductPurchaseBox'
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }))
@@ -57,7 +58,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <p className="text-graphite/70 leading-relaxed mb-8">{product.description}</p>
 
               <div className="flex flex-wrap gap-4 mb-10">
-                <AddToCartButton product={product} />
+                <ProductPurchaseBox product={product} />
               </div>
 
               <div className="space-y-8">
@@ -190,7 +191,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   </svg>
                 </div>
                 <p className="text-3xl font-bold text-copper mb-6">${product.price.toFixed(2)}</p>
-                <AddToCartButton product={product} />
+                <ProductPurchaseBox product={product} />
                 <div className="mt-6 flex items-center gap-3">
                   <svg viewBox="0 0 50 32" className="h-8 w-auto rounded" aria-label="Visa" xmlns="http://www.w3.org/2000/svg">
                     <rect width="50" height="32" rx="5" fill="#1A1F71"/>
