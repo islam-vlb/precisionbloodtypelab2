@@ -74,15 +74,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 </div>
 
                 <div>
-                  <h2 className="font-heading text-xl font-bold text-graphite mb-4">How It Works</h2>
-                  <p className="text-graphite/70 text-sm leading-relaxed">
-                    Use the included kit to collect your sample at home following the simple instructions. 
-                    Place your sample in the prepaid return envelope and drop it off at any USPS location. 
-                    Access your results online privately and share them with your physician if desired.
-                  </p>
-                </div>
-
-                <div>
                   <h2 className="font-heading text-xl font-bold text-graphite mb-4">Important Information</h2>
                   <div className="bg-warm-dark border border-graphite/10 p-6">
                     <p className="text-sm text-graphite/80 leading-relaxed">{product.medicalDisclaimer}</p>
@@ -99,10 +90,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     <div>
                       <h3 className="font-heading text-sm font-bold text-graphite mb-2">How do I collect my sample?</h3>
                       <p className="text-sm text-graphite/70">The kit includes simple instructions for at-home sample collection. Follow the steps carefully for the best results.</p>
-                    </div>
-                    <div>
-                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">How long until I get results?</h3>
-                      <p className="text-sm text-graphite/70">Results are typically available within a few days after your sample is received at the lab.</p>
                     </div>
                     <div>
                       <h3 className="font-heading text-sm font-bold text-graphite mb-2">How is my information protected?</h3>

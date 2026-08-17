@@ -27,16 +27,6 @@ export default function HomePage() {
       title: 'COLLECT',
       desc: 'Use the included kit to collect your sample at home following the simple instructions.',
     },
-    {
-      num: '02',
-      title: 'SEND',
-      desc: 'Place your sample in the prepaid return envelope and drop it off at any USPS location.',
-    },
-    {
-      num: '03',
-      title: 'REVIEW',
-      desc: 'Access your results online privately and share them with your physician if desired.',
-    },
   ]
 
   return (
