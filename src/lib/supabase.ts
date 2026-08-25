@@ -15,7 +15,7 @@ export const products = [
       'Results may be shared with your physician for follow-up guidance',
       'For informational and wellness purposes',
     ],
-    image: '/images/at-home-metabolism-test-kit.jpg',
+    image: '/images/at-home-metabolism-test-kit.png',
     medicalDisclaimer: 'This product is intended for general wellness and informational purposes. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider regarding any health concerns or before making decisions based on your results.',
   },
   {
@@ -41,7 +41,7 @@ export const products = [
       { name: 'Ashwagandha Root Extract', amount: '300mg' },
       { name: 'Rhodiola Rosea Extract', amount: '200mg' },
     ],
-    image: '/images/daily-energy-vitality-support.jpg',
+    image: '/images/daily-energy-vitality-support.png',
     fdaDisclosure: 'These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Consult your physician before beginning any new supplement, especially if you have a thyroid condition, are pregnant or nursing, or are taking medication.',
     supplementDisclaimer: 'This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Consult your physician before beginning any new supplement.',
   },
