@@ -10,7 +10,7 @@ export default function TermsPage() {
         <div className="prose prose-lg max-w-none text-graphite/80 space-y-8">
           <section>
             <h2 className="font-heading text-xl font-bold text-graphite">1. Introduction</h2>
-            <p>These Terms & Conditions govern your use of PrecisionMetabolismLab.com, operated by {BUSINESS.name}.</p>
+            <p>These Terms & Conditions govern your use of {BUSINESS.domain}, operated by {BUSINESS.name}.</p>
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-graphite">2. Products</h2>

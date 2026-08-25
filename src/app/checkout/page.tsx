@@ -132,7 +132,7 @@ export default function CheckoutPage() {
               </label>
               <p className="mt-3 text-sm text-graphite/80">I agree to be billed <span className="font-semibold">${total.toFixed(2)}</span>.</p>
               <p className="mt-1 text-sm text-graphite/80">Your credit card will be charged <span className="font-semibold">${total.toFixed(2)}</span>.</p>
-              <p className="mt-1 text-xs text-graphite/60">Charges will appear as PrecisionMetabolismLab on your statement</p>
+              <p className="mt-1 text-xs text-graphite/60">Charges will appear as {BUSINESS.descriptor} on your statement.</p>
               <p className="mt-2 text-xs text-copper">⚠️ Individuals under 18 are not permitted to purchase</p>
               <p className="mt-1 text-xs text-graphite/60">Personal information will not be shared with Third Parties</p>
             </div>

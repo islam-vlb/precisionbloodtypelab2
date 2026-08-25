@@ -8,7 +8,7 @@ export default function FulfillmentAddressPage() {
         <div className="bg-white border border-graphite/10 p-8">
           <h2 className="font-heading text-xl font-bold text-graphite mb-4">Mailing / Fulfillment Address</h2>
           <p className="text-graphite/80">{BUSINESS.name}</p>
-          <p className="text-graphite/80">{BUSINESS.address}</p>
+          <p className="text-graphite/80">{BUSINESS.fulfillmentAddress}</p>
           <p className="mt-6 text-sm text-graphite/60">
             Please use this address for any returns or correspondence.
           </p>

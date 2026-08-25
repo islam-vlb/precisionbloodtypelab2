@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Menu, X, ChevronDown, ShoppingCart, Search, Minus } from 'lucide-react'
 import { useCart } from '@/components/CartProvider'
 import { products } from '@/lib/supabase'
+import { BUSINESS } from '@/lib/config'
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -51,7 +52,7 @@ export default function Header() {
                 <path d="M20 8C20 8 12 14 12 22C12 26 15 30 20 32C25 30 28 26 28 22C28 14 20 8 20 8Z" fill="#c67b4e"/>
               </svg>
               <span className="font-heading font-bold text-xl text-graphite tracking-tight">
-                PrecisionMetabolismLab
+                {BUSINESS.brandName}
               </span>
             </Link>
 

@@ -12,7 +12,7 @@ export default function Footer() {
                 <circle cx="20" cy="20" r="18" stroke="#c67b4e" strokeWidth="2" fill="none"/>
                 <path d="M20 8C20 8 12 14 12 22C12 26 15 30 20 32C25 30 28 26 28 22C28 14 20 8 20 8Z" fill="#c67b4e"/>
               </svg>
-              <span className="font-heading font-bold text-lg text-warm">PrecisionMetabolismLab</span>
+              <span className="font-heading font-bold text-lg text-warm">{BUSINESS.brandName}</span>
             </Link>
             <p className="text-sm text-warm/70 mb-2">{BUSINESS.descriptor}</p>
             <p className="text-sm text-warm/70">{BUSINESS.address}</p>
@@ -53,7 +53,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div className="space-y-2">
               <p className="text-sm text-warm/70">
-                Charges will appear as PrecisionMetabolismLab on your statement
+                Charges appear as {BUSINESS.descriptor} on your statement.
               </p>
               <p className="text-sm text-warm/70">
                 Personal information will not be shared with Third Parties
@@ -74,7 +74,7 @@ export default function Footer() {
           </div>
           <div className="mt-8 pt-8 border-t border-warm/10 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-xs text-warm/50">
-              © 2026 {BUSINESS.name} — PrecisionMetabolismLab. All rights reserved.
+              © 2026 {BUSINESS.name} — {BUSINESS.brandName}. All rights reserved.
             </p>
             <p className="text-xs text-warm/50">
               ⚠️ Individuals under 18 are not permitted to purchase

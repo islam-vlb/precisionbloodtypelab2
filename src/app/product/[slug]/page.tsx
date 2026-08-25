@@ -4,6 +4,7 @@ import { products } from '@/lib/supabase'
 import { Check, ShoppingCart, ArrowRight, Minus } from 'lucide-react'
 import AddToCartButton from '@/components/AddToCartButton'
 import ProductPurchaseBox from '@/components/ProductPurchaseBox'
+import { BUSINESS } from '@/lib/config'
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }))
@@ -204,7 +205,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     <path d="M25 7.5a11 11 0 0 1 0 17A11 11 0 0 1 25 7.5z" fill="#FF5F00"/>
                   </svg>
                 </div>
-                <p className="mt-4 text-xs text-graphite/60">Charges will appear as PrecisionMetabolismLab on your statement</p>
+                <p className="mt-4 text-xs text-graphite/60">Charges will appear as {BUSINESS.descriptor} on your statement</p>
                 <div className="mt-6 pt-6 border-t border-graphite/10">
                   <p className="text-sm text-graphite/70 mb-2">Looking for our main product?</p>
                   <Link href="/" className="text-copper font-semibold hover:underline inline-flex items-center gap-1">
