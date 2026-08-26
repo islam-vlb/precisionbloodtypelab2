@@ -2,15 +2,12 @@
 
 import React from 'react'
 import { useCart } from '@/components/CartProvider'
-import { products } from '@/lib/supabase'
 import { X, Plus, Minus, ShoppingCart } from 'lucide-react'
 import Link from 'next/link'
 
 export default function CartDrawer() {
-  const { items, removeItem, updateQuantity, subtotal, shipping, total, itemCount } = useCart()
+  const { items, removeItem, updateQuantity, subtotal, total, itemCount } = useCart()
   const [isOpen, setIsOpen] = React.useState(false)
-
-  const supplementItems = items.filter(item => item.product.category === 'supplement')
 
   return (
     <>
@@ -47,25 +44,26 @@ export default function CartDrawer() {
               ) : (
                 <div className="space-y-6">
                   {items.map(item => (
-                    <div key={item.product.id} className="border-b border-graphite/10 pb-4">
+                    <div key={item.cartItemId} className="border-b border-graphite/10 pb-4">
                       <div className="flex justify-between items-start mb-2">
                         <div>
-                          <h3 className="font-heading font-semibold text-graphite">{item.product.name}</h3>
-                          <p className="text-sm text-graphite/70">${item.product.price.toFixed(2)}</p>
+                          <h3 className="font-heading font-semibold text-graphite">{item.productName}</h3>
+                          <p className="text-xs text-graphite/60">{item.variantLabel}</p>
+                          <p className="text-sm text-graphite/70 mt-1">${item.price.toFixed(2)}</p>
                         </div>
-                        <button onClick={() => removeItem(item.product.id)} className="p-1 hover:bg-copper/10 rounded-full transition-colors">
+                        <button onClick={() => removeItem(item.cartItemId)} className="p-1 hover:bg-copper/10 rounded-full transition-colors">
                           <X className="h-4 w-4 text-copper" />
                         </button>
                       </div>
-                      {item.product.category === 'supplement' && item.product.fdaDisclosure && (
-                        <p className="text-xs text-graphite/60 mt-1">{item.product.fdaDisclosure}</p>
+                      {item.productCategory === 'supplement' && item.fdaDisclosure && (
+                        <p className="text-xs text-graphite/60 mt-1">{item.fdaDisclosure}</p>
                       )}
                       <div className="flex items-center gap-3 mt-3">
-                        <button onClick={() => updateQuantity(item.product.id, item.quantity - 1)} className="p-1 border border-graphite/20 rounded hover:bg-graphite/5 transition-colors">
+                        <button onClick={() => updateQuantity(item.cartItemId, item.quantity - 1)} className="p-1 border border-graphite/20 rounded hover:bg-graphite/5 transition-colors">
                           <Minus className="h-4 w-4" />
                         </button>
                         <span className="font-medium w-8 text-center">{item.quantity}</span>
-                        <button onClick={() => updateQuantity(item.product.id, item.quantity + 1)} className="p-1 border border-graphite/20 rounded hover:bg-graphite/5 transition-colors">
+                        <button onClick={() => updateQuantity(item.cartItemId, item.quantity + 1)} className="p-1 border border-graphite/20 rounded hover:bg-graphite/5 transition-colors">
                           <Plus className="h-4 w-4" />
                         </button>
                       </div>
@@ -83,7 +81,7 @@ export default function CartDrawer() {
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-graphite/70">Shipping</span>
-                  <span className="font-semibold">${shipping.toFixed(2)}</span>
+                  <span className="font-semibold">Included</span>
                 </div>
                 <div className="flex justify-between text-lg font-heading font-bold">
                   <span>Total</span>

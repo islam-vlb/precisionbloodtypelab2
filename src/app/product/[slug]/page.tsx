@@ -1,8 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { products } from '@/lib/supabase'
-import { Check, ShoppingCart, ArrowRight, Minus } from 'lucide-react'
-import AddToCartButton from '@/components/AddToCartButton'
+import { products, getDefaultVariant } from '@/lib/supabase'
+import { Check, ArrowRight } from 'lucide-react'
 import ProductPurchaseBox from '@/components/ProductPurchaseBox'
 import { BUSINESS } from '@/lib/config'
 
@@ -16,7 +15,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   if (!product) return notFound()
 
   const isSupplement = product.category === 'supplement'
-  const relatedProduct = isSupplement ? products.find((p) => p.category === 'test-kit') : products.find((p) => p.category === 'supplement')
+  const defaultVariant = getDefaultVariant(product)
 
   return (
     <div className="bg-warm min-h-screen">
@@ -47,10 +46,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 {product.category === 'test-kit' ? 'Test Kit' : 'Supplement'}
               </p>
               <h1 className="font-heading text-3xl sm:text-4xl font-bold text-graphite mb-4">{product.name}</h1>
-              <p className="text-3xl font-bold text-copper mb-6">${product.price.toFixed(2)}</p>
+              <p className="text-3xl font-bold text-copper mb-6">Starting at ${defaultVariant.price.toFixed(2)}</p>
               <p className="text-graphite/70 leading-relaxed mb-8">{product.description}</p>
 
-              <div className="flex flex-wrap gap-4 mb-10">
+              <div className="mb-10">
                 <ProductPurchaseBox product={product} />
               </div>
 
@@ -95,7 +94,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 <div>
                   <h2 className="font-heading text-xl font-bold text-graphite mb-4">Shipping & Returns</h2>
                   <p className="text-sm text-graphite/70 leading-relaxed">
-                    Orders are shipped via USPS Priority Mail for a flat rate of $7.95 per order. 
+                    Shipping is included at no additional charge with every order.
                     We accept returns within 30 days of the date received. Please see our Refund Policy for full details.
                   </p>
                 </div>
@@ -176,7 +175,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <p className="text-3xl font-bold text-copper mb-6">${product.price.toFixed(2)}</p>
+                <p className="text-3xl font-bold text-copper mb-6">Starting at ${defaultVariant.price.toFixed(2)}</p>
                 <ProductPurchaseBox product={product} />
                 <div className="mt-6 flex items-center gap-3">
                   <svg viewBox="0 0 50 32" className="h-8 w-auto rounded" aria-label="Visa" xmlns="http://www.w3.org/2000/svg">

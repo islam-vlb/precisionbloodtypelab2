@@ -4,22 +4,16 @@ import React from 'react'
 import Link from 'next/link'
 import { ShoppingCart, Check, ArrowRight, Activity, Beaker, Microscope, Heart } from 'lucide-react'
 import { useCart } from '@/components/CartProvider'
-import { products } from '@/lib/supabase'
+import { products, getDefaultVariant } from '@/lib/supabase'
 
 const mainProduct = products[0]
 const supplement = products[1]
 
 export default function HomePage() {
   const { addItem } = useCart()
-
-  const features = [
-    'Measures key hormones associated with metabolism and energy',
-    'Simple at-home sample collection with included instructions',
-    'Discreet packaging for shipping and storage',
-    'Results available quickly',
-    'Results may be shared with your physician for follow-up guidance',
-    'For informational and wellness purposes',
-  ]
+  const mainDefaultVariant = getDefaultVariant(mainProduct)
+  const supplementDefaultVariant = getDefaultVariant(supplement)
+  const features = mainProduct.features
 
   const steps = [
     {
@@ -117,7 +111,7 @@ export default function HomePage() {
               <h2 className="font-heading text-3xl sm:text-4xl font-bold text-graphite mb-4">
                 {mainProduct.name}
               </h2>
-              <p className="text-2xl font-bold text-copper mb-6">${mainProduct.price.toFixed(2)}</p>
+              <p className="text-2xl font-bold text-copper mb-6">Starting at ${mainDefaultVariant.price.toFixed(2)}</p>
               <p className="text-graphite/70 leading-relaxed mb-8">
                 {mainProduct.description}
               </p>
@@ -131,7 +125,7 @@ export default function HomePage() {
               </ul>
               <div className="flex flex-wrap gap-4">
                 <button
-                  onClick={() => addItem(mainProduct)}
+                  onClick={() => addItem(mainProduct, mainDefaultVariant)}
                   className="inline-flex items-center gap-2 bg-copper px-6 py-3 font-heading font-semibold text-white hover:bg-copper-dark transition-colors"
                 >
                   <ShoppingCart className="h-4 w-4" />
@@ -236,7 +230,7 @@ export default function HomePage() {
               <h2 className="font-heading text-3xl sm:text-4xl font-bold text-graphite mb-4">
                 {supplement.name}
               </h2>
-              <p className="text-2xl font-bold text-copper mb-6">${supplement.price.toFixed(2)}</p>
+              <p className="text-2xl font-bold text-copper mb-6">Starting at ${supplementDefaultVariant.price.toFixed(2)}</p>
               <p className="text-graphite/70 leading-relaxed mb-8">
                 {supplement.description}
               </p>

@@ -10,11 +10,8 @@ const US_STATES = [
 ]
 
 export default function CheckoutPage() {
-  const { items, subtotal } = useCart()
+  const { items, subtotal, total } = useCart()
   const [agreed, setAgreed] = useState(false)
-  const shipping = 7.95
-  const total = subtotal + (items.length > 0 ? shipping : 0)
-  const hasSupplement = items.some((item) => item.product.category === 'supplement')
 
   if (items.length === 0) {
     return (
@@ -143,9 +140,11 @@ export default function CheckoutPage() {
               <h2 className="font-heading text-xl font-bold text-graphite mb-4">Order Summary</h2>
               <div className="space-y-3 text-sm">
                 {items.map((item) => (
-                  <div key={item.product.id} className="flex justify-between">
-                    <span className="text-graphite/70">{item.product.name} × {item.quantity}</span>
-                    <span className="font-semibold">${(item.product.price * item.quantity).toFixed(2)}</span>
+                  <div key={item.cartItemId} className="flex justify-between gap-4">
+                    <span className="text-graphite/70">
+                      {item.productName} — {item.variantLabel} × {item.quantity}
+                    </span>
+                    <span className="font-semibold whitespace-nowrap">${(item.price * item.quantity).toFixed(2)}</span>
                   </div>
                 ))}
                 <div className="border-t border-graphite/10 pt-3 space-y-2">
@@ -155,7 +154,7 @@ export default function CheckoutPage() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-graphite/70">Shipping</span>
-                    <span className="font-semibold">${shipping.toFixed(2)}</span>
+                    <span className="font-semibold">Included</span>
                   </div>
                   <div className="flex justify-between text-base pt-2 border-t border-graphite/10">
                     <span className="font-bold">Total</span>

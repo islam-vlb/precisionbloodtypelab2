@@ -5,9 +5,7 @@ import { useCart } from '@/components/CartProvider'
 import { Trash2, Plus, Minus } from 'lucide-react'
 
 export default function CartPage() {
-  const { items, removeItem, updateQuantity, subtotal } = useCart()
-  const shipping = 7.95
-  const total = subtotal + (items.length > 0 ? shipping : 0)
+  const { items, removeItem, updateQuantity, subtotal, total } = useCart()
 
   if (items.length === 0) {
     return (
@@ -30,12 +28,13 @@ export default function CartPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-6">
             {items.map((item) => (
-              <div key={item.product.id} className="bg-white border border-graphite/10 p-6">
+              <div key={item.cartItemId} className="bg-white border border-graphite/10 p-6">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="flex-1">
-                    <h3 className="font-heading font-bold text-graphite">{item.product.name}</h3>
-                    <p className="text-sm text-graphite/70">${item.product.price.toFixed(2)} each</p>
-                    {item.product.category === 'supplement' && (
+                    <h3 className="font-heading font-bold text-graphite">{item.productName}</h3>
+                    <p className="text-sm text-graphite/70">{item.variantLabel}</p>
+                    <p className="text-sm text-graphite/70">${item.price.toFixed(2)} each</p>
+                    {item.productCategory === 'supplement' && (
                       <p className="mt-2 text-xs text-copper">
                         These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.
                       </p>
@@ -44,7 +43,7 @@ export default function CartPage() {
                   <div className="flex items-center gap-4">
                     <div className="flex items-center gap-2">
                       <button
-                        onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
+                        onClick={() => updateQuantity(item.cartItemId, item.quantity - 1)}
                         className="flex h-8 w-8 items-center justify-center border border-graphite/20 text-graphite/70 hover:border-copper hover:text-copper transition-colors"
                         aria-label="Decrease quantity"
                       >
@@ -52,7 +51,7 @@ export default function CartPage() {
                       </button>
                       <span className="w-8 text-center font-semibold">{item.quantity}</span>
                       <button
-                        onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
+                        onClick={() => updateQuantity(item.cartItemId, item.quantity + 1)}
                         className="flex h-8 w-8 items-center justify-center border border-graphite/20 text-graphite/70 hover:border-copper hover:text-copper transition-colors"
                         aria-label="Increase quantity"
                       >
@@ -60,10 +59,10 @@ export default function CartPage() {
                       </button>
                     </div>
                     <span className="font-semibold text-graphite min-w-[80px] text-right">
-                      ${(item.product.price * item.quantity).toFixed(2)}
+                      ${(item.price * item.quantity).toFixed(2)}
                     </span>
                     <button
-                      onClick={() => removeItem(item.product.id)}
+                      onClick={() => removeItem(item.cartItemId)}
                       className="p-2 text-graphite/40 hover:text-copper transition-colors"
                       aria-label="Remove item"
                     >
@@ -85,7 +84,7 @@ export default function CartPage() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-graphite/70">Shipping</span>
-                  <span className="font-semibold">${shipping.toFixed(2)}</span>
+                  <span className="font-semibold">Included</span>
                 </div>
                 <div className="flex justify-between border-t border-graphite/10 pt-3 text-base">
                   <span className="font-bold">Total</span>

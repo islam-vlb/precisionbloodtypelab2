@@ -1,22 +1,29 @@
 'use client'
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react'
-import { Product } from '@/lib/supabase'
+import { Product, ProductVariant } from '@/lib/supabase'
 
-interface CartItem {
-  product: Product
+export interface CartItem {
+  cartItemId: string
+  productId: number
+  productSlug: string
+  productName: string
+  productCategory: Product['category']
+  variantId: string
+  variantLabel: string
+  price: number
   quantity: number
+  fdaDisclosure?: string
 }
 
 interface CartContextType {
   items: CartItem[]
-  addItem: (product: Product, quantity?: number) => void
-  removeItem: (productId: string) => void
-  updateQuantity: (productId: string, quantity: number) => void
+  addItem: (product: Product, variant: ProductVariant, quantity?: number) => void
+  removeItem: (cartItemId: string) => void
+  updateQuantity: (cartItemId: string, quantity: number) => void
   clearCart: () => void
   itemCount: number
   subtotal: number
-  shipping: number
   total: number
 }
 
@@ -50,32 +57,47 @@ export default function CartProvider({ children }: { children: ReactNode }) {
     }
   }, [items, mounted])
 
-  const addItem = (product: Product, quantity: number = 1) => {
+  const addItem = (product: Product, variant: ProductVariant, quantity: number = 1) => {
+    const cartItemId = `${product.id}-${variant.id}`
     setItems(prev => {
-      const existing = prev.find(item => item.product.id === product.id)
+      const existing = prev.find(item => item.cartItemId === cartItemId)
       if (existing) {
         return prev.map(item =>
-          item.product.id === product.id
+          item.cartItemId === cartItemId
             ? { ...item, quantity: item.quantity + quantity }
             : item
         )
       }
-      return [...prev, { product, quantity }]
+      return [
+        ...prev,
+        {
+          cartItemId,
+          productId: product.id,
+          productSlug: product.slug,
+          productName: product.name,
+          productCategory: product.category,
+          variantId: variant.id,
+          variantLabel: variant.label,
+          price: variant.price,
+          quantity,
+          fdaDisclosure: product.fdaDisclosure,
+        },
+      ]
     })
   }
 
-  const removeItem = (productId: string) => {
-    setItems(prev => prev.filter(item => item.product.id !== productId))
+  const removeItem = (cartItemId: string) => {
+    setItems(prev => prev.filter(item => item.cartItemId !== cartItemId))
   }
 
-  const updateQuantity = (productId: string, quantity: number) => {
+  const updateQuantity = (cartItemId: string, quantity: number) => {
     if (quantity <= 0) {
-      removeItem(productId)
+      removeItem(cartItemId)
       return
     }
     setItems(prev =>
       prev.map(item =>
-        item.product.id === productId ? { ...item, quantity } : item
+        item.cartItemId === cartItemId ? { ...item, quantity } : item
       )
     )
   }
@@ -83,13 +105,12 @@ export default function CartProvider({ children }: { children: ReactNode }) {
   const clearCart = () => setItems([])
 
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0)
-  const subtotal = items.reduce((sum, item) => sum + item.product.price * item.quantity, 0)
-  const shipping = items.length > 0 ? 7.95 : 0
-  const total = subtotal + shipping
+  const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
+  const total = subtotal
 
   return (
     <CartContext.Provider
-      value={{ items, addItem, removeItem, updateQuantity, clearCart, itemCount, subtotal, shipping, total }}
+      value={{ items, addItem, removeItem, updateQuantity, clearCart, itemCount, subtotal, total }}
     >
       {children}
     </CartContext.Provider>

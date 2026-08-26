@@ -14,18 +14,23 @@ export default function TermsPage() {
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-graphite">2. Products</h2>
-            <p>We sell the following products:</p>
-            <ul className="list-disc pl-6 space-y-2">
-              {products.map((p) => (
-                <li key={p.id}>
-                  <span className="font-semibold">{p.name}</span> — ${p.price.toFixed(2)}
-                </li>
-              ))}
-            </ul>
+            <p>We sell the following products and options:</p>
+            {products.map((p) => (
+              <div key={p.id} className="mb-4">
+                <p className="font-semibold">{p.name}</p>
+                <ul className="list-disc pl-6 space-y-1">
+                  {p.variants.map((v) => (
+                    <li key={v.id}>
+                      {v.label} — ${v.price.toFixed(2)}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-graphite">3. Pricing</h2>
-            <p>All prices are listed in US Dollars and are subject to change without notice. Shipping is $7.95 per order.</p>
+            <p>All prices are listed in US Dollars and are subject to change without notice. Shipping is included at no additional charge with every order.</p>
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-graphite">4. Order Acceptance</h2>
@@ -37,7 +42,7 @@ export default function TermsPage() {
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-graphite">6. Shipping</h2>
-            <p>Orders are shipped via USPS Priority Mail for $7.95. Shipping is limited to the United States. Please see our Shipping Policy for full details.</p>
+            <p>Orders are shipped via USPS Priority Mail. Shipping is included at no additional charge and is limited to the United States. Please see our Shipping Policy for full details.</p>
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-graphite">7. Returns</h2>
