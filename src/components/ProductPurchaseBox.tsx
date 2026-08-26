@@ -19,9 +19,14 @@ function groupBySection(variants: ProductVariant[]) {
   return sections
 }
 
-export default function ProductPurchaseBox({ product }: { product: Product }) {
+interface ProductPurchaseBoxProps {
+  product: Product
+  selectedVariantId: string
+  onSelectVariant: (variantId: string) => void
+}
+
+export default function ProductPurchaseBox({ product, selectedVariantId, onSelectVariant }: ProductPurchaseBoxProps) {
   const { addItem } = useCart()
-  const [selectedVariantId, setSelectedVariantId] = React.useState(product.defaultVariantId)
   const [quantity, setQuantity] = React.useState(1)
   const [added, setAdded] = React.useState(false)
 
@@ -54,7 +59,7 @@ export default function ProductPurchaseBox({ product }: { product: Product }) {
                   <button
                     key={variant.id}
                     type="button"
-                    onClick={() => setSelectedVariantId(variant.id)}
+                    onClick={() => onSelectVariant(variant.id)}
                     className={`w-full flex items-center justify-between gap-4 border px-4 py-3 text-left transition-colors ${
                       isSelected
                         ? 'border-lab bg-lab/5'

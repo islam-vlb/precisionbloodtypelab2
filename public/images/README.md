@@ -1,17 +1,7 @@
-# Medical Images
+# Images
 
-Place medical/laboratory images in this folder. The site references the following paths:
+- `/images/hero-medical-lab.jpg` — Homepage hero laboratory visual
+- `/images/products/*.jpg` — Real At-Home Metabolism Test Kit photos, one per Test Kit variant (see `variants[].image` in `src/lib/supabase.ts`)
+- `/images/supplements/*.jpg` — Real Daily Energy & Vitality Support photos, one per supplement variant (see `variants[].image` in `src/lib/supabase.ts`)
 
-- `/images/hero-medical-lab.jpg` — Hero section laboratory visual
-- `/images/science-metabolism.jpg` — Science strip background
-- `/images/product-test-kit.jpg` — Flagship product image
-- `/images/educational-lab.jpg` — Educational/lab note section
-- `/images/wellness-supplement.jpg` — Wellness product image
-
-If an image is missing, the site displays a technical SVG fallback.
-
-Recommended specs:
-- JPG or PNG format
-- High resolution (at least 1200px wide)
-- Professional laboratory/medical photography
-- No patient faces or doctor poses
+Each product variant carries its own `image` field. The product detail page (`src/components/ProductDetail.tsx`) swaps the displayed photo live as the shopper selects a different bundle/quantity option, using that variant's image.

@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { Menu, X, ChevronDown, ShoppingCart, Search, Minus } from 'lucide-react'
-import { useCart } from '@/components/CartProvider'
+import { Menu, X, ChevronDown, Search, Minus } from 'lucide-react'
+import CartDrawer from '@/components/CartDrawer'
 import { products } from '@/lib/supabase'
 import { BUSINESS } from '@/lib/config'
 
@@ -12,7 +12,6 @@ export default function Header() {
   const [productsOpen, setProductsOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  const { itemCount } = useCart()
   const searchInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
@@ -106,14 +105,7 @@ export default function Header() {
                   K
                 </kbd>
               </button>
-              <Link href="/cart" className="relative p-2 text-graphite hover:text-copper transition-colors">
-                <ShoppingCart className="h-5 w-5" />
-                {itemCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-copper text-xs font-bold text-white">
-                    {itemCount}
-                  </span>
-                )}
-              </Link>
+              <CartDrawer />
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
                 className="md:hidden p-2 text-graphite"
