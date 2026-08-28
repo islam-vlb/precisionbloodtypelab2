@@ -15,14 +15,6 @@ export default function HomePage() {
   const supplementDefaultVariant = getDefaultVariant(supplement)
   const features = mainProduct.features
 
-  const steps = [
-    {
-      num: '01',
-      title: 'COLLECT',
-      desc: 'Use the included kit to collect your sample at home following the simple instructions.',
-    },
-  ]
-
   return (
     <div>
       {/* 01 — HERO */}
@@ -146,24 +138,12 @@ export default function HomePage() {
       {/* 04 — HOW IT WORKS */}
       <section id="how-it-works" className="bg-white border-y border-graphite/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <div className="text-center mb-16">
+          <div className="max-w-3xl mx-auto text-center">
             <p className="text-xs font-medium tracking-widest text-copper uppercase mb-4">Process</p>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-graphite">How It Works</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {steps.map((step, idx) => (
-              <div key={step.num} className="relative">
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="font-heading text-4xl font-bold text-copper/20">{step.num}</span>
-                  <div className="h-px flex-1 bg-graphite/10" />
-                </div>
-                <h3 className="font-heading text-xl font-bold text-graphite mb-3">{step.title}</h3>
-                <p className="text-graphite/70 leading-relaxed">{step.desc}</p>
-                {idx < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-full w-full h-px bg-graphite/10 -translate-x-1/2" />
-                )}
-              </div>
-            ))}
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-graphite mb-6">How It Works</h2>
+            <p className="text-lg text-graphite/70 leading-relaxed">
+              Use the included kit to collect your sample at home following the simple instructions.
+            </p>
           </div>
         </div>
       </section>
