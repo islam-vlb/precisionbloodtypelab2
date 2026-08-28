@@ -77,16 +77,24 @@ export default function ProductDetail({ product }: { product: Product }) {
                   <h2 className="font-heading text-xl font-bold text-graphite mb-4">Frequently Asked Questions</h2>
                   <div className="space-y-6">
                     <div>
-                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">What does this test measure?</h3>
-                      <p className="text-sm text-graphite/70">This test measures key hormones commonly associated with metabolism, energy, and weight, including cortisol. Results are provided for informational purposes.</p>
+                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">What is the At-Home Metabolism Test Kit?</h3>
+                      <p className="text-sm text-graphite/70">It is an at-home wellness kit that provides an informational reading of key hormones commonly associated with metabolism, energy, and weight, including cortisol.</p>
                     </div>
                     <div>
-                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">How do I collect my sample?</h3>
-                      <p className="text-sm text-graphite/70">The kit includes simple instructions for at-home sample collection. Follow the steps carefully for the best results.</p>
+                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">Is this a diagnostic test?</h3>
+                      <p className="text-sm text-graphite/70">No. This is an informational and general wellness tool. It is not a diagnostic device and is not intended to diagnose, treat, cure, or prevent any disease or condition.</p>
                     </div>
                     <div>
-                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">How is my information protected?</h3>
-                      <p className="text-sm text-graphite/70">Personal information will not be shared with Third Parties. We only collect the information necessary to process and ship your order.</p>
+                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">How do I get my results?</h3>
+                      <p className="text-sm text-graphite/70">Follow the enclosed instructions to complete your at-home reading. Your informational summary is available within minutes, right where you are.</p>
+                    </div>
+                    <div>
+                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">How private is my information?</h3>
+                      <p className="text-sm text-graphite/70">Your kit ships in discreet, unmarked packaging. Personal information will not be shared with third parties, and we only collect the information necessary to process and ship your order.</p>
+                    </div>
+                    <div>
+                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">Can I share my results with my doctor?</h3>
+                      <p className="text-sm text-graphite/70">Yes. You can bring your at-home reading to discuss as part of a broader conversation with a qualified healthcare provider.</p>
                     </div>
                   </div>
                 </div>

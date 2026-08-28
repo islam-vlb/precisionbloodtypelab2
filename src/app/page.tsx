@@ -140,10 +140,35 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-xs font-medium tracking-widest text-copper uppercase mb-4">Process</p>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-graphite mb-6">How It Works</h2>
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-graphite mb-6">Your At-Home Test, Made Simple</h2>
             <p className="text-lg text-graphite/70 leading-relaxed">
-              Use the included kit to collect your sample at home following the simple instructions.
+              Simple testing. Immediate results. All from the comfort of home.
             </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
+            {[
+              {
+                number: '1',
+                title: 'Choose Your Test',
+                description: 'Select the At-Home Test Kit that’s right for you.',
+              },
+              {
+                number: '2',
+                title: 'Test at Home',
+                description: 'Follow the simple instructions and test in the comfort of your home.',
+              },
+              {
+                number: '3',
+                title: 'Get Instant Results',
+                description: 'Get your results instantly — no lab visit, no mail-back process, and no need to sign up online.',
+              },
+            ].map((step) => (
+              <div key={step.number} className="border-t-2 border-copper pt-6">
+                <span className="text-sm font-medium tracking-widest text-copper">0{step.number}</span>
+                <h3 className="font-heading text-xl font-bold text-graphite mt-4 mb-3">{step.title}</h3>
+                <p className="text-sm text-graphite/70 leading-relaxed">{step.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
