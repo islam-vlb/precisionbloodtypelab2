@@ -72,7 +72,7 @@ export default function Header() {
                     {products.map((product) => (
                       <Link
                         key={product.id}
-                        href={product.slug === 'at-home-metabolism-test-kit' ? '/' : `/product/${product.slug}`}
+                        href={product.slug === 'smart-body-composition-scale' ? '/' : `/product/${product.slug}`}
                         className="block px-4 py-3 text-sm text-graphite hover:bg-warm hover:text-copper transition-colors"
                         onClick={() => setProductsOpen(false)}
                       >
@@ -132,7 +132,7 @@ export default function Header() {
                       {products.map((product) => (
                         <Link
                           key={product.id}
-                          href={product.slug === 'at-home-metabolism-test-kit' ? '/' : `/product/${product.slug}`}
+                          href={product.slug === 'smart-body-composition-scale' ? '/' : `/product/${product.slug}`}
                           className="text-sm text-graphite/80 py-1"
                           onClick={() => { setProductsOpen(false); setMobileOpen(false) }}
                         >
@@ -182,7 +182,7 @@ export default function Header() {
                       {searchResults.map((product) => (
                         <Link
                           key={product.id}
-                          href={product.slug === 'at-home-metabolism-test-kit' ? '/' : `/product/${product.slug}`}
+                          href={product.slug === 'smart-body-composition-scale' ? '/' : `/product/${product.slug}`}
                           className="block p-4 bg-warm border border-graphite/10 rounded-sm hover:border-copper transition-colors"
                           onClick={() => { setSearchOpen(false); setSearchQuery('') }}
                         >

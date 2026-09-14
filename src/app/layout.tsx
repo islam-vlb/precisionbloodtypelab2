@@ -6,8 +6,8 @@ import CartProvider from '@/components/CartProvider'
 import { BUSINESS } from '@/lib/config'
 
 export const metadata: Metadata = {
-  title: `${BUSINESS.brandName} — At-Home Metabolism Test Kit`,
-  description: `Understand your metabolism from home with the At-Home Metabolism Test Kit from ${BUSINESS.brandName}.`,
+  title: `${BUSINESS.brandName} — Smart Body Composition Scale`,
+  description: `Track your weight and body composition trends from home with the Smart Body Composition Scale from ${BUSINESS.brandName}.`,
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

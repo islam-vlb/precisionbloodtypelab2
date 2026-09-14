@@ -39,7 +39,7 @@ export default function ProductDetail({ product }: { product: Product }) {
 
             <div>
               <p className="text-xs font-medium tracking-widest text-copper uppercase mb-4">
-                {product.category === 'test-kit' ? 'Test Kit' : 'Supplement'}
+                {product.category === 'device' ? 'Wellness Device' : 'Supplement'}
               </p>
               <h1 className="font-heading text-3xl sm:text-4xl font-bold text-graphite mb-4">{product.name}</h1>
               <p className="text-3xl font-bold text-copper mb-6">${selectedVariant.price.toFixed(2)}</p>
@@ -77,24 +77,24 @@ export default function ProductDetail({ product }: { product: Product }) {
                   <h2 className="font-heading text-xl font-bold text-graphite mb-4">Frequently Asked Questions</h2>
                   <div className="space-y-6">
                     <div>
-                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">What is the At-Home Metabolism Test Kit?</h3>
-                      <p className="text-sm text-graphite/70">It is an at-home wellness kit that provides an informational reading of key hormones commonly associated with metabolism, energy, and weight, including cortisol.</p>
+                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">What is the Smart Body Composition Scale?</h3>
+                      <p className="text-sm text-graphite/70">It is a digital scale that uses bioelectrical impedance technology to provide weight and general body composition trend data, including estimated body fat percentage and BMI.</p>
                     </div>
                     <div>
-                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">Is this a diagnostic test?</h3>
-                      <p className="text-sm text-graphite/70">No. This is an informational and general wellness tool. It is not a diagnostic device and is not intended to diagnose, treat, cure, or prevent any disease or condition.</p>
+                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">How accurate is it?</h3>
+                      <p className="text-sm text-graphite/70">The scale is designed for trend tracking over time rather than precise clinical measurement. Bioelectrical readings can be affected by hydration, recent exercise, and other factors, so results are most useful when viewed as a trend rather than a single reading.</p>
                     </div>
                     <div>
-                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">How do I get my results?</h3>
-                      <p className="text-sm text-graphite/70">Follow the enclosed instructions to complete your at-home reading. Your informational summary is available within minutes, right where you are.</p>
+                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">How do I use it?</h3>
+                      <p className="text-sm text-graphite/70">Place the scale on a hard, flat surface, step on with bare feet, and stand still. Your weight and body composition estimates will appear on the display within seconds.</p>
                     </div>
                     <div>
-                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">How private is my information?</h3>
-                      <p className="text-sm text-graphite/70">Your kit ships in discreet, unmarked packaging. Personal information will not be shared with third parties, and we only collect the information necessary to process and ship your order.</p>
+                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">Does it come with a battery?</h3>
+                      <p className="text-sm text-graphite/70">Yes. A battery is included, so the scale is ready to use right out of the box.</p>
                     </div>
                     <div>
-                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">Can I share my results with my doctor?</h3>
-                      <p className="text-sm text-graphite/70">Yes. You can bring your at-home reading to discuss as part of a broader conversation with a qualified healthcare provider.</p>
+                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">Who shouldn&apos;t use this scale?</h3>
+                      <p className="text-sm text-graphite/70">This device should not be used by individuals with pacemakers or other implanted medical devices. Consult a qualified healthcare provider with any questions about whether this product is right for you.</p>
                     </div>
                   </div>
                 </div>
@@ -117,7 +117,7 @@ export default function ProductDetail({ product }: { product: Product }) {
                   <ol className="flex items-center gap-2">
                     <li><Link href="/" className="text-copper hover:underline">Home</Link></li>
                     <li className="text-graphite/30">/</li>
-                    <li><Link href="/product/at-home-metabolism-test-kit" className="text-copper hover:underline">At-Home Metabolism Test Kit</Link></li>
+                    <li><Link href="/product/smart-body-composition-scale" className="text-copper hover:underline">Smart Body Composition Scale</Link></li>
                     <li className="text-graphite/30">/</li>
                     <li className="text-graphite/60">{product.name}</li>
                   </ol>
@@ -205,7 +205,7 @@ export default function ProductDetail({ product }: { product: Product }) {
                 <div className="mt-6 pt-6 border-t border-graphite/10">
                   <p className="text-sm text-graphite/70 mb-2">Looking for our main product?</p>
                   <Link href="/" className="text-copper font-semibold hover:underline inline-flex items-center gap-1">
-                    At-Home Metabolism Test Kit <ArrowRight className="h-3 w-3" />
+                    Smart Body Composition Scale <ArrowRight className="h-3 w-3" />
                   </Link>
                 </div>
               </div>

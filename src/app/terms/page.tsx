@@ -49,8 +49,8 @@ export default function TermsPage() {
             <p>Returns are accepted within 30 days of the date received. Please see our Refund Policy for full details.</p>
           </section>
           <section>
-            <h2 className="font-heading text-xl font-bold text-graphite">8. Medical Disclaimer</h2>
-            <p>The At-Home Metabolism Test Kit is intended for general wellness and informational purposes. It is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+            <h2 className="font-heading text-xl font-bold text-graphite">8. Product Disclaimer</h2>
+            <p>The Smart Body Composition Scale is a general wellness device intended for trend tracking and informational purposes. It is not a diagnostic or medical device and does not test, diagnose, or analyze any biological sample.</p>
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-graphite">9. Supplement Disclaimer</h2>

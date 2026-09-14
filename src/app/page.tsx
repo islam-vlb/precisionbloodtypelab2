@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { ShoppingCart, Check, ArrowRight, Activity, Beaker, Microscope, Heart } from 'lucide-react'
+import { ShoppingCart, Check, ArrowRight, Activity, Scale, TrendingUp, Heart } from 'lucide-react'
 import { useCart } from '@/components/CartProvider'
 import { products, getDefaultVariant } from '@/lib/supabase'
 
@@ -23,10 +23,10 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <p className="text-xs font-medium tracking-widest text-copper uppercase mb-6">
-                At-Home Metabolic Screening
+                At-Home Wellness Tracking
               </p>
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-graphite leading-[1.1] mb-8">
-                Understand What Shapes Your Metabolism.
+                Understand Your Body Composition Trends.
               </h1>
               <p className="text-lg text-graphite/70 leading-relaxed mb-10 max-w-xl">
                 {mainProduct.longDescription}
@@ -36,7 +36,7 @@ export default function HomePage() {
                   href="#flagship"
                   className="inline-flex items-center gap-2 bg-copper px-8 py-4 font-heading font-semibold text-white hover:bg-copper-dark transition-colors"
                 >
-                  Explore the Test Kit
+                  Explore the Scale
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -51,11 +51,11 @@ export default function HomePage() {
               <div className="aspect-[4/5] bg-warm-dark border border-graphite/10 relative overflow-hidden">
                 <img
                   src="/images/hero-medical-lab.jpg"
-                  alt="Medical laboratory professional analyzing samples"
+                  alt="Smart body composition scale used as part of a daily wellness routine"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-4 left-4 text-xs text-graphite/30 font-mono">FIG. 01</div>
-                <div className="absolute bottom-4 right-4 text-xs text-graphite/30 font-mono">LABORATORY ANALYSIS</div>
+                <div className="absolute bottom-4 right-4 text-xs text-graphite/30 font-mono">WELLNESS TRACKING</div>
               </div>
             </div>
           </div>
@@ -67,9 +67,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { label: 'METABOLISM', icon: Activity },
-              { label: 'ENERGY', icon: Beaker },
-              { label: 'HORMONES', icon: Microscope },
+              { label: 'WEIGHT', icon: Scale },
+              { label: 'BODY FAT %', icon: Activity },
+              { label: 'TRENDS', icon: TrendingUp },
               { label: 'WELLNESS', icon: Heart },
             ].map((item) => (
               <div key={item.label} className="flex flex-col items-center text-center">
@@ -142,25 +142,25 @@ export default function HomePage() {
             <p className="text-xs font-medium tracking-widest text-copper uppercase mb-4">Process</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-graphite mb-6">Your {mainProduct.name}, Made Simple</h2>
             <p className="text-lg text-graphite/70 leading-relaxed">
-              Simple testing. Results in minutes. All from the comfort of home.
+              Simple setup. Instant readings. All from the comfort of home.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
             {[
               {
                 number: '1',
-                title: 'Choose Your Test',
-                description: `Select the ${mainProduct.name} that's right for you.`,
+                title: 'Choose Your Scale',
+                description: `Select the ${mainProduct.name} option that's right for you.`,
               },
               {
                 number: '2',
-                title: 'Test at Home',
-                description: 'Follow the simple instructions and complete your at-home sample collection in the comfort of your home.',
+                title: 'Step On at Home',
+                description: 'Place the scale on a hard, flat surface and step on with bare feet in the comfort of your home.',
               },
               {
                 number: '3',
-                title: 'Get Results in Minutes',
-                description: 'Read your informational summary in about 5 minutes, with no outside processing or account required.',
+                title: 'Get an Instant Reading',
+                description: 'View your weight and body composition trend estimates right on the display, with no account or outside processing required.',
               },
             ].map((step) => (
               <div key={step.number} className="border-t-2 border-copper pt-6">
@@ -192,7 +192,7 @@ export default function HomePage() {
                   <line x1="140" y1="130" x2="260" y2="170" stroke="#4a7c59" strokeWidth="0.5" opacity="0.3"/>
                   <line x1="140" y1="170" x2="260" y2="130" stroke="#4a7c59" strokeWidth="0.5" opacity="0.3"/>
                   <rect x="80" y="230" width="240" height="30" rx="2" stroke="#4a7c59" strokeWidth="0.5" opacity="0.3"/>
-                  <text x="200" y="250" textAnchor="middle" fill="#4a7c59" fontSize="10" fontFamily="monospace" opacity="0.6">HORMONE ANALYSIS</text>
+                  <text x="200" y="250" textAnchor="middle" fill="#4a7c59" fontSize="10" fontFamily="monospace" opacity="0.6">BODY COMPOSITION TRENDS</text>
                 </svg>
                 <div className="absolute top-4 left-4 text-xs text-graphite/30 font-mono">FIG. 03</div>
                 <div className="absolute bottom-4 right-4 text-xs text-graphite/30 font-mono">EDUCATIONAL</div>
@@ -200,23 +200,24 @@ export default function HomePage() {
             </div>
             <div className="order-1 lg:order-2">
               <p className="text-xs font-medium tracking-widest text-copper uppercase mb-4">
-                Lab Note
+                Wellness Note
               </p>
               <h2 className="font-heading text-3xl sm:text-4xl font-bold text-graphite mb-6">
-                Your Metabolism, Explained Simply.
+                Your Body Composition, Explained Simply.
               </h2>
               <div className="space-y-4 text-graphite/70 leading-relaxed">
                 <p>
-                  Metabolism refers to the chemical processes that occur within a living organism to maintain life. 
-                  Hormones play a key role in regulating these processes, influencing energy, weight, and overall wellness.
+                  Body composition trend tracking looks at more than the number on a scale, offering a broader
+                  view of weight, estimated body fat percentage, and BMI over time.
                 </p>
                 <p>
-                  This at-home test measures key hormones commonly associated with metabolism, energy, and weight — 
-                  including cortisol — using a simple at-home sample collection.
+                  This smart scale uses bioelectrical impedance technology to estimate these values each time
+                  you step on, using a simple at-home reading with no sample collection required.
                 </p>
                 <p>
-                  Results are provided for informational purposes and can be shared with a healthcare provider 
-                  for further guidance. This product is not intended to diagnose, treat, cure, or prevent any disease.
+                  Readings are provided for trend tracking and informational purposes and can be shared with a
+                  healthcare provider for further guidance. This product is not a diagnostic or medical device
+                  and does not test, diagnose, or analyze any biological sample.
                 </p>
               </div>
             </div>
