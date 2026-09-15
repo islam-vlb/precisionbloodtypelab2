@@ -33,10 +33,10 @@ export default function HomePage() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
-                  href="#flagship"
+                  href={`/product/${mainProduct.slug}`}
                   className="inline-flex items-center gap-2 bg-copper px-8 py-4 font-heading font-semibold text-white hover:bg-copper-dark transition-colors"
                 >
-                  Explore the Scale
+                  View Product
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
