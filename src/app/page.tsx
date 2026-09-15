@@ -7,12 +7,10 @@ import { useCart } from '@/components/CartProvider'
 import { products, getDefaultVariant } from '@/lib/supabase'
 
 const mainProduct = products[0]
-const supplement = products[1]
 
 export default function HomePage() {
   const { addItem } = useCart()
   const mainDefaultVariant = getDefaultVariant(mainProduct)
-  const supplementDefaultVariant = getDefaultVariant(supplement)
   const features = mainProduct.features
 
   return (
@@ -225,42 +223,50 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 06 — WELLNESS PRODUCT */}
+      {/* 06 — FAQ PREVIEW */}
       <section className="bg-white border-t border-graphite/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-xs font-medium tracking-widest text-copper uppercase mb-4">
-                Wellness Support
-              </p>
-              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-graphite mb-4">
-                {supplement.name}
-              </h2>
-              <p className="text-2xl font-bold text-copper mb-6">Starting at ${supplementDefaultVariant.price.toFixed(2)}</p>
-              <p className="text-graphite/70 leading-relaxed mb-8">
-                {supplement.description}
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href={`/product/${supplement.slug}`}
-                  className="inline-flex items-center gap-2 border border-graphite/20 px-6 py-3 font-heading font-semibold text-graphite hover:border-copper hover:text-copper transition-colors"
-                >
-                  Explore Wellness
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <p className="text-xs font-medium tracking-widest text-copper uppercase mb-4">
+              Common Questions
+            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-graphite mb-6">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+            {[
+              {
+                q: 'What is the Smart Body Composition Scale?',
+                a: 'A digital scale that uses bioelectrical impedance technology to provide weight and general body composition trend data, including estimated body fat percentage and BMI.',
+              },
+              {
+                q: 'How accurate is it?',
+                a: 'It is designed for trend tracking over time rather than precise clinical measurement. Readings are most useful when viewed as a trend rather than a single measurement.',
+              },
+              {
+                q: 'How do I use it?',
+                a: 'Place the scale on a hard, flat surface, step on with bare feet, and stand still. Your reading appears on the display within seconds.',
+              },
+              {
+                q: "Who shouldn't use this scale?",
+                a: 'This device should not be used by individuals with pacemakers or other implanted medical devices. Consult a healthcare provider with any questions.',
+              },
+            ].map((item) => (
+              <div key={item.q}>
+                <h3 className="font-heading text-base font-bold text-graphite mb-2">{item.q}</h3>
+                <p className="text-sm text-graphite/70 leading-relaxed">{item.a}</p>
               </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-square bg-warm-dark border border-graphite/10 relative overflow-hidden">
-                <img
-                  src={supplement.image}
-                  alt={supplement.name}
-                  className="w-full h-full object-contain"
-                />
-                <div className="absolute top-4 left-4 text-xs text-graphite/30 font-mono">WELLNESS</div>
-                <div className="absolute bottom-4 right-4 text-xs text-graphite/30 font-mono">FIG. 04</div>
-              </div>
-            </div>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link
+              href={`/product/${mainProduct.slug}#faq`}
+              className="inline-flex items-center gap-2 border border-graphite/20 px-6 py-3 font-heading font-semibold text-graphite hover:border-copper hover:text-copper transition-colors"
+            >
+              View Full FAQ
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

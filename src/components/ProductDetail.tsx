@@ -73,7 +73,7 @@ export default function ProductDetail({ product }: { product: Product }) {
                   </div>
                 </div>
 
-                <div>
+                <div id="faq">
                   <h2 className="font-heading text-xl font-bold text-graphite mb-4">Frequently Asked Questions</h2>
                   <div className="space-y-6">
                     <div>
