@@ -50,7 +50,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="aspect-[4/5] bg-warm-dark border border-graphite/10 relative overflow-hidden">
                 <img
-                  src="/images/hero-medical-lab.jpg"
+                  src="/images/hero-scale.jpg"
                   alt="Smart body composition scale used as part of a daily wellness routine"
                   className="w-full h-full object-cover"
                 />

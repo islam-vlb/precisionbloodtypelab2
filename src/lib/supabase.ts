@@ -48,7 +48,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
       'Compact design, tempered glass platform',
       'Battery included',
     ],
-    image: '/images/products/tk-single-test.jpg',
+    image: '/images/products/scale-1x.jpg',
     medicalDisclaimer: 'This product is a general wellness scale intended for trend tracking and informational purposes. It is not a diagnostic or medical device and does not test, diagnose, or analyze any biological sample. Bioelectrical readings may be affected by hydration, recent exercise, or other factors and should be used for trend awareness only. Always consult a qualified healthcare provider regarding any health concerns. This device should not be used by individuals with pacemakers or other implanted medical devices.',
     defaultVariantId: 'tk-single-test',
     variants: [
@@ -59,7 +59,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         section: 'Single Scale Offer',
         isBundle: false,
         scaleCount: 1,
-        image: '/images/products/tk-single-test.jpg',
+        image: '/images/products/scale-1x.jpg',
       },
       {
         id: 'tk-bundle-supp-30',
@@ -70,7 +70,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         scaleCount: 1,
         bottleCount: 1,
         capsuleCount: 30,
-        image: '/images/products/tk-bundle-supp-30.jpg',
+        image: '/images/products/scale-1x-supp30.jpg',
       },
       {
         id: 'tk-bundle-supp-60',
@@ -81,7 +81,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         scaleCount: 1,
         bottleCount: 1,
         capsuleCount: 60,
-        image: '/images/products/tk-bundle-supp-60.jpg',
+        image: '/images/products/scale-1x-supp60.jpg',
       },
       {
         id: 'tk-bundle-supp-90',
@@ -92,7 +92,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         scaleCount: 1,
         bottleCount: 1,
         capsuleCount: 90,
-        image: '/images/products/tk-bundle-supp-90.jpg',
+        image: '/images/products/scale-1x-supp90.jpg',
       },
       {
         id: 'tk-multi-2',
@@ -101,7 +101,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         section: 'Multi-Scale Bundle Offers',
         isBundle: false,
         scaleCount: 2,
-        image: '/images/products/tk-multi-2.jpg',
+        image: '/images/products/scale-2x.jpg',
       },
       {
         id: 'tk-multi-2-supp-30',
@@ -112,7 +112,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         scaleCount: 2,
         bottleCount: 1,
         capsuleCount: 30,
-        image: '/images/products/tk-multi-2-supp-30.jpg',
+        image: '/images/products/scale-2x-supp30.jpg',
       },
       {
         id: 'tk-multi-2-supp-60',
@@ -123,7 +123,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         scaleCount: 2,
         bottleCount: 1,
         capsuleCount: 60,
-        image: '/images/products/tk-multi-2-supp-60.jpg',
+        image: '/images/products/scale-2x-supp60.jpg',
       },
       {
         id: 'tk-multi-2-supp-90',
@@ -134,7 +134,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         scaleCount: 2,
         bottleCount: 1,
         capsuleCount: 90,
-        image: '/images/products/tk-multi-2-supp-90.jpg',
+        image: '/images/products/scale-2x-supp90.jpg',
       },
       {
         id: 'tk-multi-3',
@@ -143,7 +143,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         section: 'Multi-Scale Bundle Offers',
         isBundle: false,
         scaleCount: 3,
-        image: '/images/products/tk-multi-3.jpg',
+        image: '/images/products/scale-3x.jpg',
       },
     ],
   },
