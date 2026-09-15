@@ -2,14 +2,12 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { ShoppingCart, Check, ArrowRight, Activity, Scale, TrendingUp, Heart } from 'lucide-react'
-import { useCart } from '@/components/CartProvider'
+import { Check, ArrowRight, Activity, Scale, TrendingUp, Heart } from 'lucide-react'
 import { products, getDefaultVariant } from '@/lib/supabase'
 
 const mainProduct = products[0]
 
 export default function HomePage() {
-  const { addItem } = useCart()
   const mainDefaultVariant = getDefaultVariant(mainProduct)
   const features = mainProduct.features
 
@@ -114,13 +112,12 @@ export default function HomePage() {
                 ))}
               </ul>
               <div className="flex flex-wrap gap-4">
-                <button
-                  onClick={() => addItem(mainProduct, mainDefaultVariant)}
+                <Link
+                  href={`/product/${mainProduct.slug}`}
                   className="inline-flex items-center gap-2 bg-copper px-6 py-3 font-heading font-semibold text-white hover:bg-copper-dark transition-colors"
                 >
-                  <ShoppingCart className="h-4 w-4" />
-                  Add to Cart
-                </button>
+                  View Pricing Options
+                </Link>
                 <Link
                   href={`/product/${mainProduct.slug}`}
                   className="inline-flex items-center gap-2 border border-graphite/20 px-6 py-3 font-heading font-semibold text-graphite hover:border-copper hover:text-copper transition-colors"
