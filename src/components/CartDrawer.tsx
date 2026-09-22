@@ -55,9 +55,6 @@ export default function CartDrawer() {
                           <X className="h-4 w-4 text-copper" />
                         </button>
                       </div>
-                      {item.productCategory === 'supplement' && item.fdaDisclosure && (
-                        <p className="text-xs text-graphite/60 mt-1">{item.fdaDisclosure}</p>
-                      )}
                       <div className="flex items-center gap-3 mt-3">
                         <button onClick={() => updateQuantity(item.cartItemId, item.quantity - 1)} className="p-1 border border-graphite/20 rounded hover:bg-graphite/5 transition-colors">
                           <Minus className="h-4 w-4" />

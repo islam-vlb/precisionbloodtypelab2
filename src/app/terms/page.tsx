@@ -53,27 +53,23 @@ export default function TermsPage() {
             <p>The Smart Body Composition Scale is a general wellness device intended for trend tracking and informational purposes. It is not a diagnostic or medical device and does not test, diagnose, or analyze any biological sample.</p>
           </section>
           <section>
-            <h2 className="font-heading text-xl font-bold text-graphite">9. Supplement Disclaimer</h2>
-            <p>The Daily Energy & Vitality Support is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary.</p>
-          </section>
-          <section>
-            <h2 className="font-heading text-xl font-bold text-graphite">10. Age Requirement</h2>
+            <h2 className="font-heading text-xl font-bold text-graphite">9. Age Requirement</h2>
             <p>Individuals under 18 are not permitted to purchase from this site.</p>
           </section>
           <section>
-            <h2 className="font-heading text-xl font-bold text-graphite">11. Privacy</h2>
+            <h2 className="font-heading text-xl font-bold text-graphite">10. Privacy</h2>
             <p>Please review our Privacy Policy for information on how we collect and use your personal information.</p>
           </section>
           <section>
-            <h2 className="font-heading text-xl font-bold text-graphite">12. Governing Law</h2>
+            <h2 className="font-heading text-xl font-bold text-graphite">11. Governing Law</h2>
             <p>These terms are governed by the laws of the State of Oklahoma, United States.</p>
           </section>
           <section>
-            <h2 className="font-heading text-xl font-bold text-graphite">13. Contact</h2>
+            <h2 className="font-heading text-xl font-bold text-graphite">12. Contact</h2>
             <p>For questions about these terms, contact us at {BUSINESS.email}.</p>
           </section>
           <section>
-            <h2 className="font-heading text-xl font-bold text-graphite">14. Changes</h2>
+            <h2 className="font-heading text-xl font-bold text-graphite">13. Changes</h2>
             <p>We reserve the right to update these terms at any time. Changes take effect immediately upon posting.</p>
           </section>
         </div>

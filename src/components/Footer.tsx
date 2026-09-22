@@ -24,8 +24,6 @@ export default function Footer() {
             <h3 className="font-heading font-semibold text-xs uppercase tracking-widest mb-6 text-warm/90">Products</h3>
             <ul className="space-y-3">
               <li><Link href="/" className="text-sm text-warm/70 hover:text-copper transition-colors">Smart Body Composition Scale</Link></li>
-              <li><Link href="/product/daily-energy-vitality-support" className="text-sm text-warm/70 hover:text-copper transition-colors">Daily Energy & Vitality Support</Link></li>
-              <li><Link href="/ingredients" className="text-sm text-warm/70 hover:text-copper transition-colors">Ingredients</Link></li>
             </ul>
           </div>
 

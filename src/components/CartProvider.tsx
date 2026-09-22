@@ -13,7 +13,6 @@ export interface CartItem {
   variantLabel: string
   price: number
   quantity: number
-  fdaDisclosure?: string
 }
 
 interface CartContextType {
@@ -80,7 +79,6 @@ export default function CartProvider({ children }: { children: ReactNode }) {
           variantLabel: variant.label,
           price: variant.price,
           quantity,
-          fdaDisclosure: product.fdaDisclosure,
         },
       ]
     })

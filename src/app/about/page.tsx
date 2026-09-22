@@ -8,13 +8,10 @@ export default function AboutPage() {
         <h1 className="font-heading text-3xl sm:text-4xl font-bold text-graphite mb-8">About TrevCore LLC</h1>
         <div className="prose prose-lg max-w-none text-graphite/80 space-y-6">
           <p>
-            TrevCore LLC is the company behind {BUSINESS.brandName}. We are based in Tulsa, Oklahoma and operate this website to provide wellness devices and health supplements to customers across the United States.
+            TrevCore LLC is the company behind {BUSINESS.brandName}. We are based in Tulsa, Oklahoma and operate this website to provide wellness devices to customers across the United States.
           </p>
           <p>
             Our mission is to make everyday wellness tracking accessible and convenient. The Smart Body Composition Scale allows individuals to track weight and general body composition trends, including estimated body fat percentage and BMI, from the privacy of their home as part of a daily wellness routine.
-          </p>
-          <p>
-            We also offer the Daily Energy & Vitality Support, a daily supplement formulated with B-vitamins, iodine, and adaptogenic herbs that may help support everyday energy levels and overall vitality as part of a healthy lifestyle.
           </p>
           <p>
             TrevCore LLC is committed to clear communication, accurate product information, and responsible customer service. All charges appear as {BUSINESS.descriptor} on your statement.

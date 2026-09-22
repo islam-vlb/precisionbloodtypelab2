@@ -34,11 +34,6 @@ export default function CartPage() {
                     <h3 className="font-heading font-bold text-graphite">{item.productName}</h3>
                     <p className="text-sm text-graphite/70">{item.variantLabel}</p>
                     <p className="text-sm text-graphite/70">${item.price.toFixed(2)} each</p>
-                    {item.productCategory === 'supplement' && (
-                      <p className="mt-2 text-xs text-copper">
-                        These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.
-                      </p>
-                    )}
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="flex items-center gap-2">

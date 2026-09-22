@@ -21,7 +21,7 @@ export default function RefundPage() {
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-graphite">4. Non-Returnable Items</h2>
-            <p>Opened health products may not be returnable for hygiene reasons. Please contact us before returning any opened supplement.</p>
+            <p>Used or opened devices may not be returnable for hygiene reasons. Please contact us before returning any opened item.</p>
           </section>
           <section>
             <h2 className="font-heading text-xl font-bold text-graphite">5. Damaged or Defective Items</h2>
