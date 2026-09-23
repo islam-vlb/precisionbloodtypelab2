@@ -39,7 +39,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
       'Compact design, tempered glass platform',
       'Battery included',
     ],
-    image: '/images/products/scale-1x.jpg',
+    image: '/images/products/zealta/zealta-scale-1-standard.png',
     medicalDisclaimer: 'This product is a general wellness scale intended for trend tracking and informational purposes. It is not a diagnostic or medical device and does not test, diagnose, or analyze any biological sample. Bioelectrical readings may be affected by hydration, recent exercise, or other factors and should be used for trend awareness only. Always consult a qualified healthcare provider regarding any health concerns. This device should not be used by individuals with pacemakers or other implanted medical devices.',
     defaultVariantId: 'tk-single-test',
     variants: [
@@ -51,7 +51,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         section: 'Single Scale Offer',
         isBundle: false,
         scaleCount: 1,
-        image: '/images/products/scale-1x.jpg',
+        image: '/images/products/zealta/zealta-scale-1-standard.png',
       },
       {
         id: 'tk-bundle-supp-30',
@@ -61,7 +61,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         section: 'Single Scale Offer',
         isBundle: true,
         scaleCount: 1,
-        image: '/images/products/scale-1x.jpg',
+        image: '/images/products/zealta/zealta-scale-1-plus.png',
       },
       {
         id: 'tk-bundle-supp-60',
@@ -71,7 +71,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         section: 'Single Scale Offer',
         isBundle: true,
         scaleCount: 1,
-        image: '/images/products/scale-1x.jpg',
+        image: '/images/products/zealta/zealta-scale-1-premium.png',
       },
       {
         id: 'tk-bundle-supp-90',
@@ -81,7 +81,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         section: 'Single Scale Offer',
         isBundle: true,
         scaleCount: 1,
-        image: '/images/products/scale-1x.jpg',
+        image: '/images/products/zealta/zealta-scale-1-complete.png',
       },
       {
         id: 'tk-multi-2',
@@ -91,7 +91,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         section: 'Multi-Scale Bundle Offers',
         isBundle: false,
         scaleCount: 2,
-        image: '/images/products/scale-2x.jpg',
+        image: '/images/products/zealta/zealta-scale-2-standard.png',
       },
       {
         id: 'tk-multi-2-supp-30',
@@ -101,7 +101,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         section: 'Multi-Scale Bundle Offers',
         isBundle: true,
         scaleCount: 2,
-        image: '/images/products/scale-2x.jpg',
+        image: '/images/products/zealta/zealta-scale-2-plus.png',
       },
       {
         id: 'tk-multi-2-supp-60',
@@ -111,7 +111,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         section: 'Multi-Scale Bundle Offers',
         isBundle: true,
         scaleCount: 2,
-        image: '/images/products/scale-2x.jpg',
+        image: '/images/products/zealta/zealta-scale-2-premium.png',
       },
       {
         id: 'tk-multi-2-supp-90',
@@ -121,7 +121,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         section: 'Multi-Scale Bundle Offers',
         isBundle: true,
         scaleCount: 2,
-        image: '/images/products/scale-2x.jpg',
+        image: '/images/products/zealta/zealta-scale-2-complete.png',
       },
       {
         id: 'tk-multi-3',
@@ -131,7 +131,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         section: 'Multi-Scale Bundle Offers',
         isBundle: false,
         scaleCount: 3,
-        image: '/images/products/scale-3x.jpg',
+        image: '/images/products/zealta/zealta-scale-3.png',
       },
     ],
   },
@@ -149,7 +149,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
       'Compact storage pouch included',
       'Pairs naturally with a daily wellness routine alongside the Smart Body Composition Scale',
     ],
-    image: '/images/products/resistance-bands-1x.jpg',
+    image: '/images/products/zealta/zealta-bands-1-plus.png',
     medicalDisclaimer: 'This product is a general fitness accessory intended for everyday exercise routines. It is not a medical device and is not intended to diagnose, treat, cure, or prevent any condition. Consult a qualified healthcare provider before beginning any new exercise routine.',
     defaultVariantId: 'bands-standard-set',
     variants: [
@@ -160,7 +160,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         price: 9.99,
         section: 'Regular Product Options',
         isBundle: false,
-        image: '/images/products/resistance-bands-1x.jpg',
+        image: '/images/products/zealta/zealta-bands-1-standard.png',
       },
       {
         id: 'bands-standard-set',
@@ -169,7 +169,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         price: 13.95,
         section: 'Regular Product Options',
         isBundle: false,
-        image: '/images/products/resistance-bands-1x.jpg',
+        image: '/images/products/zealta/zealta-bands-1-plus.png',
       },
       {
         id: 'bands-extended-set',
@@ -178,7 +178,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         price: 14.75,
         section: 'Regular Product Options',
         isBundle: false,
-        image: '/images/products/resistance-bands-1x.jpg',
+        image: '/images/products/zealta/zealta-bands-1-premium.png',
       },
       {
         id: 'bands-complete-set',
@@ -187,7 +187,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         price: 17.95,
         section: 'Regular Product Options',
         isBundle: false,
-        image: '/images/products/resistance-bands-1x.jpg',
+        image: '/images/products/zealta/zealta-bands-1-complete.png',
       },
       {
         id: '2-set-value-bundle',
@@ -196,7 +196,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         price: 18.75,
         section: 'Bundle Offers',
         isBundle: true,
-        image: '/images/products/resistance-bands-2x.jpg',
+        image: '/images/products/zealta/zealta-bands-2.png',
       },
       {
         id: '3-set-savings-bundle',
@@ -205,7 +205,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         price: 28.76,
         section: 'Bundle Offers',
         isBundle: true,
-        image: '/images/products/resistance-bands-3x.jpg',
+        image: '/images/products/zealta/zealta-bands-3.png',
       },
       {
         id: '4-set-best-value-bundle',
@@ -214,7 +214,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
         price: 38.64,
         section: 'Bundle Offers',
         isBundle: true,
-        image: '/images/products/resistance-bands-4x.jpg',
+        image: '/images/products/zealta/zealta-bands-4.png',
       },
     ],
   },
