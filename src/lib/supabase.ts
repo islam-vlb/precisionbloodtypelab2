@@ -1,10 +1,18 @@
 export interface ProductVariant {
   id: string
   label: string
+  detail?: string
   price: number
   section: string
   isBundle: boolean
   scaleCount?: number
+  image: string
+}
+
+export interface CompanionAccessory {
+  name: string
+  description: string
+  features: string[]
   image: string
 }
 
@@ -20,6 +28,7 @@ export interface Product {
   defaultVariantId: string
   image: string
   medicalDisclaimer?: string
+  companionAccessory?: CompanionAccessory
 }
 
 export const FALLBACK_PRODUCTS: Product[] = [
@@ -45,6 +54,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
       {
         id: 'tk-single-test',
         label: '1 Smart Body Composition Scale — Standard',
+        detail: '1 Scale',
         price: 47.89,
         section: 'Single Scale Offer',
         isBundle: false,
@@ -54,33 +64,37 @@ export const FALLBACK_PRODUCTS: Product[] = [
       {
         id: 'tk-bundle-supp-30',
         label: '1 Smart Body Composition Scale — Plus',
+        detail: '1 Scale + Resistance Band Fitness Set',
         price: 49.76,
         section: 'Single Scale Offer',
-        isBundle: false,
+        isBundle: true,
         scaleCount: 1,
         image: '/images/products/scale-1x.jpg',
       },
       {
         id: 'tk-bundle-supp-60',
         label: '1 Smart Body Composition Scale — Premium',
+        detail: '1 Scale + Resistance Band Fitness Set + Door Anchor & Handles',
         price: 53.45,
         section: 'Single Scale Offer',
-        isBundle: false,
+        isBundle: true,
         scaleCount: 1,
         image: '/images/products/scale-1x.jpg',
       },
       {
         id: 'tk-bundle-supp-90',
         label: '1 Smart Body Composition Scale — Complete',
+        detail: '1 Scale + Resistance Band Fitness Set + Door Anchor & Handles + Printed Workout Guide',
         price: 54.95,
         section: 'Single Scale Offer',
-        isBundle: false,
+        isBundle: true,
         scaleCount: 1,
         image: '/images/products/scale-1x.jpg',
       },
       {
         id: 'tk-multi-2',
         label: '2-Scale Bundle — Standard',
+        detail: '2 Scales',
         price: 86.88,
         section: 'Multi-Scale Bundle Offers',
         isBundle: false,
@@ -90,33 +104,37 @@ export const FALLBACK_PRODUCTS: Product[] = [
       {
         id: 'tk-multi-2-supp-30',
         label: '2-Scale Bundle — Plus',
+        detail: '2 Scales + Resistance Band Fitness Set',
         price: 87.64,
         section: 'Multi-Scale Bundle Offers',
-        isBundle: false,
+        isBundle: true,
         scaleCount: 2,
         image: '/images/products/scale-2x.jpg',
       },
       {
         id: 'tk-multi-2-supp-60',
         label: '2-Scale Bundle — Premium',
+        detail: '2 Scales + Resistance Band Fitness Set + Door Anchor & Handles',
         price: 87.76,
         section: 'Multi-Scale Bundle Offers',
-        isBundle: false,
+        isBundle: true,
         scaleCount: 2,
         image: '/images/products/scale-2x.jpg',
       },
       {
         id: 'tk-multi-2-supp-90',
         label: '2-Scale Bundle — Complete',
+        detail: '2 Scales + Resistance Band Fitness Set + Door Anchor & Handles + Printed Workout Guide',
         price: 94.82,
         section: 'Multi-Scale Bundle Offers',
-        isBundle: false,
+        isBundle: true,
         scaleCount: 2,
         image: '/images/products/scale-2x.jpg',
       },
       {
         id: 'tk-multi-3',
         label: '3-Scale Bundle',
+        detail: '3 Scales',
         price: 96.95,
         section: 'Multi-Scale Bundle Offers',
         isBundle: false,
@@ -124,6 +142,18 @@ export const FALLBACK_PRODUCTS: Product[] = [
         image: '/images/products/scale-3x.jpg',
       },
     ],
+    companionAccessory: {
+      name: 'Resistance Band Fitness Set',
+      description:
+        'A set of resistance bands for general at-home fitness use, offering multiple resistance levels for a range of exercises. A general fitness accessory intended for everyday exercise routines — not a medical device and not intended to diagnose, treat, or prevent any condition.',
+      features: [
+        'Multiple resistance levels included',
+        'Portable, lightweight design',
+        'Suitable for general strength and mobility exercises',
+        'Compact storage pouch included',
+      ],
+      image: '/images/products/resistance-bands.jpg',
+    },
   },
 ]
 

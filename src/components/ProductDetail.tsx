@@ -64,6 +64,36 @@ export default function ProductDetail({ product }: { product: Product }) {
                   </ul>
                 </div>
 
+                {product.companionAccessory && (
+                  <div>
+                    <h2 className="font-heading text-xl font-bold text-graphite mb-4">
+                      Companion Accessory: {product.companionAccessory.name}
+                    </h2>
+                    <div className="grid sm:grid-cols-[140px_1fr] gap-5 items-start">
+                      <div className="relative aspect-square bg-warm-dark border border-graphite/10 overflow-hidden">
+                        <img
+                          src={product.companionAccessory.image}
+                          alt={product.companionAccessory.name}
+                          className="w-full h-full object-contain p-3"
+                        />
+                      </div>
+                      <div>
+                        <p className="text-sm text-graphite/70 leading-relaxed mb-3">
+                          {product.companionAccessory.description}
+                        </p>
+                        <ul className="space-y-1.5">
+                          {product.companionAccessory.features.map((f) => (
+                            <li key={f} className="text-sm text-graphite/80">• {f}</li>
+                          ))}
+                        </ul>
+                        <p className="text-xs text-graphite/50 mt-3">
+                          Included starting with the Plus option — see pricing options above for what&apos;s included at each tier.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 <div>
                   <h2 className="font-heading text-xl font-bold text-graphite mb-4">Important Information</h2>
                   <div className="bg-warm-dark border border-graphite/10 p-6">

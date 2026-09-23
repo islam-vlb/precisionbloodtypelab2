@@ -78,6 +78,9 @@ export default function ProductPurchaseBox({ product, selectedVariantId, onSelec
                         <span className="block text-sm font-medium text-graphite">
                           {variant.label}
                         </span>
+                        {variant.detail && (
+                          <span className="block text-xs text-graphite/60 mt-0.5">{variant.detail}</span>
+                        )}
                         {variant.isBundle && (
                           <span className="mt-1 inline-block rounded-sm bg-copper/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-copper">
                             Bundle Offer
