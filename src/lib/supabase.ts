@@ -9,18 +9,11 @@ export interface ProductVariant {
   image: string
 }
 
-export interface CompanionAccessory {
-  name: string
-  description: string
-  features: string[]
-  image: string
-}
-
 export interface Product {
   id: number
   slug: string
   name: string
-  category: 'device'
+  category: 'device' | 'accessory'
   description: string
   longDescription?: string
   features: string[]
@@ -28,7 +21,6 @@ export interface Product {
   defaultVariantId: string
   image: string
   medicalDisclaimer?: string
-  companionAccessory?: CompanionAccessory
 }
 
 export const FALLBACK_PRODUCTS: Product[] = [
@@ -53,7 +45,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     variants: [
       {
         id: 'tk-single-test',
-        label: '1 Smart Body Composition Scale — Standard',
+        label: '1 Smart Body Composition Scale',
         detail: '1 Scale',
         price: 47.89,
         section: 'Single Scale Offer',
@@ -62,72 +54,12 @@ export const FALLBACK_PRODUCTS: Product[] = [
         image: '/images/products/scale-1x.jpg',
       },
       {
-        id: 'tk-bundle-supp-30',
-        label: '1 Smart Body Composition Scale — Plus',
-        detail: '1 Scale + Resistance Band Fitness Set',
-        price: 49.76,
-        section: 'Single Scale Offer',
-        isBundle: true,
-        scaleCount: 1,
-        image: '/images/products/scale-1x.jpg',
-      },
-      {
-        id: 'tk-bundle-supp-60',
-        label: '1 Smart Body Composition Scale — Premium',
-        detail: '1 Scale + Resistance Band Fitness Set + Door Anchor & Handles',
-        price: 53.45,
-        section: 'Single Scale Offer',
-        isBundle: true,
-        scaleCount: 1,
-        image: '/images/products/scale-1x.jpg',
-      },
-      {
-        id: 'tk-bundle-supp-90',
-        label: '1 Smart Body Composition Scale — Complete',
-        detail: '1 Scale + Resistance Band Fitness Set + Door Anchor & Handles + Printed Workout Guide',
-        price: 54.95,
-        section: 'Single Scale Offer',
-        isBundle: true,
-        scaleCount: 1,
-        image: '/images/products/scale-1x.jpg',
-      },
-      {
         id: 'tk-multi-2',
-        label: '2-Scale Bundle — Standard',
+        label: '2-Scale Bundle',
         detail: '2 Scales',
         price: 86.88,
         section: 'Multi-Scale Bundle Offers',
         isBundle: false,
-        scaleCount: 2,
-        image: '/images/products/scale-2x.jpg',
-      },
-      {
-        id: 'tk-multi-2-supp-30',
-        label: '2-Scale Bundle — Plus',
-        detail: '2 Scales + Resistance Band Fitness Set',
-        price: 87.64,
-        section: 'Multi-Scale Bundle Offers',
-        isBundle: true,
-        scaleCount: 2,
-        image: '/images/products/scale-2x.jpg',
-      },
-      {
-        id: 'tk-multi-2-supp-60',
-        label: '2-Scale Bundle — Premium',
-        detail: '2 Scales + Resistance Band Fitness Set + Door Anchor & Handles',
-        price: 87.76,
-        section: 'Multi-Scale Bundle Offers',
-        isBundle: true,
-        scaleCount: 2,
-        image: '/images/products/scale-2x.jpg',
-      },
-      {
-        id: 'tk-multi-2-supp-90',
-        label: '2-Scale Bundle — Complete',
-        detail: '2 Scales + Resistance Band Fitness Set + Door Anchor & Handles + Printed Workout Guide',
-        price: 94.82,
-        section: 'Multi-Scale Bundle Offers',
-        isBundle: true,
         scaleCount: 2,
         image: '/images/products/scale-2x.jpg',
       },
@@ -142,18 +74,53 @@ export const FALLBACK_PRODUCTS: Product[] = [
         image: '/images/products/scale-3x.jpg',
       },
     ],
-    companionAccessory: {
-      name: 'Resistance Band Fitness Set',
-      description:
-        'A set of resistance bands for general at-home fitness use, offering multiple resistance levels for a range of exercises. A general fitness accessory intended for everyday exercise routines — not a medical device and not intended to diagnose, treat, or prevent any condition.',
-      features: [
-        'Multiple resistance levels included',
-        'Portable, lightweight design',
-        'Suitable for general strength and mobility exercises',
-        'Compact storage pouch included',
-      ],
-      image: '/images/products/resistance-bands.jpg',
-    },
+  },
+  {
+    id: 2,
+    slug: 'daily-energy-vitality-support',
+    name: 'Resistance Band Fitness Set',
+    category: 'accessory',
+    description: 'A set of resistance bands for general at-home fitness use, offering multiple resistance levels for a range of exercises. A general fitness accessory intended for everyday exercise routines — not a medical device and not intended to diagnose, treat, or prevent any condition.',
+    longDescription: 'A set of resistance bands for general at-home fitness use, offering multiple resistance levels so you can work through a range of exercises as part of an everyday fitness routine.',
+    features: [
+      'Multiple resistance levels included',
+      'Portable, lightweight design',
+      'Suitable for general strength and mobility exercises',
+      'Compact storage pouch included',
+      'Pairs naturally with a daily wellness routine alongside the Smart Body Composition Scale',
+    ],
+    image: '/images/products/resistance-bands-1x.jpg',
+    medicalDisclaimer: 'This product is a general fitness accessory intended for everyday exercise routines. It is not a medical device and is not intended to diagnose, treat, cure, or prevent any condition. Consult a qualified healthcare provider before beginning any new exercise routine.',
+    defaultVariantId: 'bands-1-set',
+    variants: [
+      {
+        id: 'bands-1-set',
+        label: '1 Set',
+        detail: '1 Resistance Band Fitness Set',
+        price: 19.99,
+        section: 'Regular Product Options',
+        isBundle: false,
+        image: '/images/products/resistance-bands-1x.jpg',
+      },
+      {
+        id: 'bands-2-set',
+        label: '2 Sets',
+        detail: '2 Resistance Band Fitness Sets',
+        price: 34.99,
+        section: 'Regular Product Options',
+        isBundle: false,
+        image: '/images/products/resistance-bands-2x.jpg',
+      },
+      {
+        id: 'bands-3-set',
+        label: '3 Sets',
+        detail: '3 Resistance Band Fitness Sets',
+        price: 46.99,
+        section: 'Regular Product Options',
+        isBundle: false,
+        image: '/images/products/resistance-bands-3x.jpg',
+      },
+    ],
   },
 ]
 
@@ -161,4 +128,8 @@ export const products = FALLBACK_PRODUCTS
 
 export function getDefaultVariant(product: Product): ProductVariant {
   return product.variants.find((v) => v.id === product.defaultVariantId) ?? product.variants[0]
+}
+
+export function getStartingPrice(product: Product): number {
+  return Math.min(...product.variants.map((v) => v.price))
 }

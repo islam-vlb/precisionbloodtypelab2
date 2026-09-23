@@ -2,15 +2,60 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { Check } from 'lucide-react'
-import { Product } from '@/lib/supabase'
+import { Check, ArrowRight } from 'lucide-react'
+import { Product, products, getStartingPrice } from '@/lib/supabase'
 import ProductPurchaseBox from '@/components/ProductPurchaseBox'
-import { BUSINESS } from '@/lib/config'
+
+const deviceFaqs = [
+  {
+    q: 'What is the Smart Body Composition Scale?',
+    a: 'It is a digital scale that uses bioelectrical impedance technology to provide weight and general body composition trend data, including estimated body fat percentage and BMI.',
+  },
+  {
+    q: 'How accurate is it?',
+    a: 'The scale is designed for trend tracking over time rather than precise clinical measurement. Bioelectrical readings can be affected by hydration, recent exercise, and other factors, so results are most useful when viewed as a trend rather than a single reading.',
+  },
+  {
+    q: 'How do I use it?',
+    a: 'Place the scale on a hard, flat surface, step on with bare feet, and stand still. Your weight and body composition estimates will appear on the display within seconds.',
+  },
+  {
+    q: 'Does it come with a battery?',
+    a: 'Yes. A battery is included, so the scale is ready to use right out of the box.',
+  },
+  {
+    q: "Who shouldn't use this scale?",
+    a: 'This device should not be used by individuals with pacemakers or other implanted medical devices. Consult a qualified healthcare provider with any questions about whether this product is right for you.',
+  },
+]
+
+const accessoryFaqs = [
+  {
+    q: 'What is included in the Resistance Band Fitness Set?',
+    a: 'Each set includes resistance bands at multiple resistance levels plus a compact storage pouch, suitable for a range of general strength and mobility exercises.',
+  },
+  {
+    q: 'What resistance levels are included?',
+    a: 'The set includes bands at multiple resistance levels so you can choose what feels comfortable and progress over time.',
+  },
+  {
+    q: 'Is this a medical device?',
+    a: 'No. This is a general fitness accessory intended for everyday exercise routines. It is not intended to diagnose, treat, cure, or prevent any condition.',
+  },
+  {
+    q: "Who shouldn't use this product?",
+    a: 'Consult a qualified healthcare provider before beginning any new exercise routine, especially if you have an existing health condition or injury.',
+  },
+]
 
 export default function ProductDetail({ product }: { product: Product }) {
   const [selectedVariantId, setSelectedVariantId] = React.useState(product.defaultVariantId)
   const selectedVariant =
     product.variants.find((v) => v.id === selectedVariantId) ?? product.variants[0]
+
+  const isDevice = product.category === 'device'
+  const faqs = isDevice ? deviceFaqs : accessoryFaqs
+  const otherProduct = products.find((p) => p.slug !== product.slug)
 
   return (
     <div className="bg-warm min-h-screen">
@@ -37,7 +82,7 @@ export default function ProductDetail({ product }: { product: Product }) {
 
             <div>
               <p className="text-xs font-medium tracking-widest text-copper uppercase mb-4">
-                Wellness Device
+                {isDevice ? 'Wellness Device' : 'Wellness Accessory'}
               </p>
               <h1 className="font-heading text-3xl sm:text-4xl font-bold text-graphite mb-4">{product.name}</h1>
               <p className="text-3xl font-bold text-copper mb-6">${selectedVariant.price.toFixed(2)}</p>
@@ -64,36 +109,6 @@ export default function ProductDetail({ product }: { product: Product }) {
                   </ul>
                 </div>
 
-                {product.companionAccessory && (
-                  <div>
-                    <h2 className="font-heading text-xl font-bold text-graphite mb-4">
-                      Companion Accessory: {product.companionAccessory.name}
-                    </h2>
-                    <div className="grid sm:grid-cols-[140px_1fr] gap-5 items-start">
-                      <div className="relative aspect-square bg-warm-dark border border-graphite/10 overflow-hidden">
-                        <img
-                          src={product.companionAccessory.image}
-                          alt={product.companionAccessory.name}
-                          className="w-full h-full object-contain p-3"
-                        />
-                      </div>
-                      <div>
-                        <p className="text-sm text-graphite/70 leading-relaxed mb-3">
-                          {product.companionAccessory.description}
-                        </p>
-                        <ul className="space-y-1.5">
-                          {product.companionAccessory.features.map((f) => (
-                            <li key={f} className="text-sm text-graphite/80">• {f}</li>
-                          ))}
-                        </ul>
-                        <p className="text-xs text-graphite/50 mt-3">
-                          Included starting with the Plus option — see pricing options above for what&apos;s included at each tier.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
                 <div>
                   <h2 className="font-heading text-xl font-bold text-graphite mb-4">Important Information</h2>
                   <div className="bg-warm-dark border border-graphite/10 p-6">
@@ -104,26 +119,12 @@ export default function ProductDetail({ product }: { product: Product }) {
                 <div id="faq">
                   <h2 className="font-heading text-xl font-bold text-graphite mb-4">Frequently Asked Questions</h2>
                   <div className="space-y-6">
-                    <div>
-                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">What is the Smart Body Composition Scale?</h3>
-                      <p className="text-sm text-graphite/70">It is a digital scale that uses bioelectrical impedance technology to provide weight and general body composition trend data, including estimated body fat percentage and BMI.</p>
-                    </div>
-                    <div>
-                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">How accurate is it?</h3>
-                      <p className="text-sm text-graphite/70">The scale is designed for trend tracking over time rather than precise clinical measurement. Bioelectrical readings can be affected by hydration, recent exercise, and other factors, so results are most useful when viewed as a trend rather than a single reading.</p>
-                    </div>
-                    <div>
-                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">How do I use it?</h3>
-                      <p className="text-sm text-graphite/70">Place the scale on a hard, flat surface, step on with bare feet, and stand still. Your weight and body composition estimates will appear on the display within seconds.</p>
-                    </div>
-                    <div>
-                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">Does it come with a battery?</h3>
-                      <p className="text-sm text-graphite/70">Yes. A battery is included, so the scale is ready to use right out of the box.</p>
-                    </div>
-                    <div>
-                      <h3 className="font-heading text-sm font-bold text-graphite mb-2">Who shouldn&apos;t use this scale?</h3>
-                      <p className="text-sm text-graphite/70">This device should not be used by individuals with pacemakers or other implanted medical devices. Consult a qualified healthcare provider with any questions about whether this product is right for you.</p>
-                    </div>
+                    {faqs.map((faq) => (
+                      <div key={faq.q}>
+                        <h3 className="font-heading text-sm font-bold text-graphite mb-2">{faq.q}</h3>
+                        <p className="text-sm text-graphite/70">{faq.a}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
@@ -134,6 +135,20 @@ export default function ProductDetail({ product }: { product: Product }) {
                     We accept returns within 30 days of the date received. Please see our Refund Policy for full details.
                   </p>
                 </div>
+
+                {otherProduct && (
+                  <div>
+                    <h2 className="font-heading text-xl font-bold text-graphite mb-4">You Might Also Like</h2>
+                    <div className="bg-warm-dark border border-graphite/10 p-6">
+                      <h3 className="font-heading text-base font-bold text-graphite mb-1">{otherProduct.name}</h3>
+                      <p className="text-sm text-graphite/70 mb-3">{otherProduct.description}</p>
+                      <p className="text-lg font-bold text-copper mb-3">Starting at ${getStartingPrice(otherProduct).toFixed(2)}</p>
+                      <Link href={`/product/${otherProduct.slug}`} className="text-copper font-semibold hover:underline inline-flex items-center gap-1">
+                        View Product <ArrowRight className="h-3 w-3" />
+                      </Link>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
