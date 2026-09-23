@@ -2,11 +2,11 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { Check } from 'lucide-react'
-import { Product } from '@/lib/supabase'
+import { Check, ArrowRight } from 'lucide-react'
+import { Product, products, getStartingPrice } from '@/lib/supabase'
 import ProductPurchaseBox from '@/components/ProductPurchaseBox'
 
-const faqs = [
+const deviceFaqs = [
   {
     q: 'What is the Smart Body Composition Scale?',
     a: 'It is a digital scale that uses bioelectrical impedance technology to provide weight and general body composition trend data, including estimated body fat percentage and BMI.',
@@ -29,10 +29,33 @@ const faqs = [
   },
 ]
 
+const accessoryFaqs = [
+  {
+    q: 'What is included in the Resistance Band Fitness Set?',
+    a: 'Each set includes resistance bands at multiple resistance levels plus a compact storage pouch, suitable for a range of general strength and mobility exercises.',
+  },
+  {
+    q: 'What resistance levels are included?',
+    a: 'The set includes bands at multiple resistance levels so you can choose what feels comfortable and progress over time.',
+  },
+  {
+    q: 'Is this a medical device?',
+    a: 'No. This is a general fitness accessory intended for everyday exercise routines. It is not intended to diagnose, treat, cure, or prevent any condition.',
+  },
+  {
+    q: "Who shouldn't use this product?",
+    a: 'Consult a qualified healthcare provider before beginning any new exercise routine, especially if you have an existing health condition or injury.',
+  },
+]
+
 export default function ProductDetail({ product }: { product: Product }) {
   const [selectedVariantId, setSelectedVariantId] = React.useState(product.defaultVariantId)
   const selectedVariant =
     product.variants.find((v) => v.id === selectedVariantId) ?? product.variants[0]
+
+  const isDevice = product.category === 'device'
+  const faqs = isDevice ? deviceFaqs : accessoryFaqs
+  const otherProduct = products.find((p) => p.slug !== product.slug)
 
   return (
     <div className="bg-warm min-h-screen">
@@ -59,7 +82,7 @@ export default function ProductDetail({ product }: { product: Product }) {
 
             <div>
               <p className="text-xs font-medium tracking-widest text-copper uppercase mb-4">
-                Wellness Device
+                {isDevice ? 'Wellness Device' : 'Wellness Accessory'}
               </p>
               <h1 className="font-heading text-3xl sm:text-4xl font-bold text-graphite mb-4">{product.name}</h1>
               <p className="text-3xl font-bold text-copper mb-6">${selectedVariant.price.toFixed(2)}</p>
@@ -112,6 +135,20 @@ export default function ProductDetail({ product }: { product: Product }) {
                     We accept returns within 30 days of the date received. Please see our Refund Policy for full details.
                   </p>
                 </div>
+
+                {otherProduct && (
+                  <div>
+                    <h2 className="font-heading text-xl font-bold text-graphite mb-4">You Might Also Like</h2>
+                    <div className="bg-warm-dark border border-graphite/10 p-6">
+                      <h3 className="font-heading text-base font-bold text-graphite mb-1">{otherProduct.name}</h3>
+                      <p className="text-sm text-graphite/70 mb-3">{otherProduct.description}</p>
+                      <p className="text-lg font-bold text-copper mb-3">Starting at ${getStartingPrice(otherProduct).toFixed(2)}</p>
+                      <Link href={`/product/${otherProduct.slug}`} className="text-copper font-semibold hover:underline inline-flex items-center gap-1">
+                        View Product <ArrowRight className="h-3 w-3" />
+                      </Link>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

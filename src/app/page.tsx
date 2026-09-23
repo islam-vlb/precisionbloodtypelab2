@@ -6,9 +6,11 @@ import { Check, ArrowRight, Activity, Scale, TrendingUp, Heart } from 'lucide-re
 import { products, getDefaultVariant } from '@/lib/supabase'
 
 const mainProduct = products[0]
+const secondaryProduct = products[1]
 
 export default function HomePage() {
   const mainDefaultVariant = getDefaultVariant(mainProduct)
+  const secondaryDefaultVariant = getDefaultVariant(secondaryProduct)
   const features = mainProduct.features
 
   return (
@@ -220,6 +222,55 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 06 — SECONDARY PRODUCT */}
+      <section className="bg-white border-t border-graphite/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1 relative aspect-square max-w-md mx-auto lg:mx-0 w-full">
+              <div className="aspect-square bg-warm-dark border border-graphite/10 relative overflow-hidden">
+                <img
+                  src={secondaryProduct.image}
+                  alt={secondaryProduct.name}
+                  className="w-full h-full object-contain"
+                />
+                <div className="absolute top-4 left-4 text-xs text-graphite/30 font-mono">PRODUCT</div>
+                <div className="absolute bottom-4 right-4 text-xs text-graphite/30 font-mono">FIG. 04</div>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <p className="text-xs font-medium tracking-widest text-copper uppercase mb-4">
+                Wellness Accessory
+              </p>
+              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-graphite mb-4">
+                {secondaryProduct.name}
+              </h2>
+              <p className="text-2xl font-bold text-copper mb-6">
+                Starting at ${secondaryDefaultVariant.price.toFixed(2)}
+              </p>
+              <p className="text-graphite/70 leading-relaxed mb-8">
+                {secondaryProduct.longDescription}
+              </p>
+              <ul className="space-y-3 mb-10">
+                {secondaryProduct.features.slice(0, 3).map((feature) => (
+                  <li key={feature} className="flex gap-3">
+                    <Check className="h-5 w-5 text-copper flex-shrink-0 mt-0.5" />
+                    <span className="text-graphite/80 text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href={`/product/${secondaryProduct.slug}`}
+                  className="inline-flex items-center gap-2 bg-copper px-6 py-3 font-heading font-semibold text-white hover:bg-copper-dark transition-colors"
+                >
+                  View Product
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
